@@ -31,39 +31,42 @@ int iswhitespace(char s)
  * If 'old' is NULL or memory allocation fails, the function returns NULL.
  */
 
-char *collapse_whitespace(char *old, char *new)
+char *collapse_whitespace(char *old)
 {
-	int i = 0, j = 0, flag = 0, leading = 1, len = _strlen(old);
+	int i = 0, j = 0, last_char_is_whitespace = 0, leading_whitespace = 1;
+	int len = _strlen(old);
+	char *new = NULL;
 
 	if (old == NULL)
 		return (NULL);
-	new = malloc(sizeof(new) * (len + 1));
+
+	new = malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (NULL);
+
 	while (old[i])
 	{
 		if (iswhitespace(old[i]))
 		{
-			if (!flag && !leading)
+			if (!last_char_is_whitespace)
 			{
 				new[j] = ' ';
+				last_char_is_whitespace = 1;
 				j++;
-				flag = 1;
 			}
 		}
 		else
 		{
-			leading = 0;
+			leading_whitespace = 0;
 			new[j] = old[i];
-			flag = 0;
+			last_char_is_whitespace = 0;
 			j++;
 		}
 		i++;
 	}
+
 	new[j] = '\0';
-	j++;
-	while (j <= len)
-		new[j] = '\0';
+
 	return (new);
 }
 
