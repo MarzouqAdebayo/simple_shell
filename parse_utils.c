@@ -8,8 +8,10 @@ void dummy(void);
  *
  * Return: 1 if 's' is a whitespace character, 0 otherwise.
  *
- * This function determines whether the input character 's' is a whitespace character.
- * Whitespace characters include space (' '), tab ('\t'), newline ('\n'), and carriage return ('\r').
+ * This function determines whether the input character 's' is a whitespace
+ * character.
+ * Whitespace characters include space (' '), tab ('\t'), newline ('\n'), and
+ * carriage return ('\r').
  * It returns 1 if 's' is a whitespace character, and 0 otherwise.
  */
 
@@ -21,14 +23,19 @@ int iswhitespace(char s)
 }
 
 /**
- * collapse_whitespace - Collapses multiple whitespace characters into a single space.
+ * collapse_whitespace - Collapses multiple whitespace characters into a
+ * single space.
  * @old: The input string containing whitespace to be collapsed.
  *
- * Return: A pointer to the newly allocated string with collapsed whitespace, or NULL on failure.
+ * Return: A pointer to the newly allocated string with collapsed whitespace,
+ * or NULL on failure.
  *
- * This function takes an input string 'old' and creates a new string 'new' where multiple consecutive
- * whitespace characters (spaces, tabs, newlines, etc.) in 'old' are collapsed into a single space ' ' and leading spaces are removed.
- * The 'new' string is dynamically allocated and must be freed by the caller when no longer needed.
+ * This function takes an input string 'old' and creates a new string 'new'
+ * where multiple consecutive
+ * whitespace characters (spaces, tabs, newlines, etc.) in 'old' are collapsed
+ * into a single space ' ' and leading spaces are removed.
+ * The 'new' string is dynamically allocated and must be freed by the caller
+ * when no longer needed.
  * If 'old' is NULL or memory allocation fails, the function returns NULL.
  */
 
@@ -76,16 +83,21 @@ char *collapse_whitespace(char *old)
  * @delimiter: The character used to split the string.
  *
  * Return: A dynamically allocated array of strings containing the substrings
- *         extracted from the input string `src`. The last element of the array is NULL.
- *         If memory allocation fails or the input is empty, the function returns NULL.
+ *         extracted from the input string `src`. The last element of the
+ *         array is NULL.
+ *         If memory allocation fails or the input is empty, the function
+ *         returns NULL.
  *
- * This function takes an input string `src` and a delimiter character `delimiter`.
- * It splits the input string into multiple substrings using the delimiter character.
- * The resulting substrings are stored in a dynamically allocated array, and the last
- * element of the array is set to NULL to indicate the end. If memory allocation fails
- * or the input string is empty, the function returns NULL.
+ * Description: This function takes an input string `src` and a delimiter
+ * character
+ * `delimiter`. It splits the input string into multiple substrings using the
+ * delimiter
+ * character. The resulting substrings are stored in a dynamically allocated
+ * array,
+ * and the last element of the array is set to NULL to indicate the end. If
+ * memory allocation fails or the input string is empty, the function returns
+ * NULL.
  */
-
 char **split_str(char *src, const char delimiter)
 {
 	int len, i, j, words_no = 0, word_start, word_index, word_length;
