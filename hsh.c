@@ -11,21 +11,15 @@
 
 int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
-	char *line = NULL;
-	size_t len = 0;
-	ssize_t bytes_read = 0;
+	char *line, **cmd_args;
 	/** Read */
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 			prompt(NULL);
-		bytes_read = getline(&line, &len, stdin);
-		if (bytes_read == -1)
-		{
-			free(line);
-			exit(1);
-		}
-		printf("%s\n", line);
+		line = read();
+		cmd_args = parse(line);
+		free(line);
 	}
 	/** Parse */
 	/** Execute */
