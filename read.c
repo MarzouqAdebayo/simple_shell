@@ -15,7 +15,7 @@
 
 char *_read(void)
 {
-	char *line = NULL, **cmd_args = NULL;
+	char *line = NULL;
 	size_t len = 0;
 	ssize_t bytes_read = 0;
 
