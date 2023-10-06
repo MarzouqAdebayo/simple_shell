@@ -4,7 +4,7 @@
  *
  */
 
-char **parse(char *str)
+char **_parse(char *str)
 {
 	char *cmd_str = NULL, **cmd_args = NULL;
 
@@ -12,7 +12,10 @@ char **parse(char *str)
 	cmd_str = collapse_whitespace(str, cmd_str);
 	free(str);
 	if (cmd_str)
+	{
+		printf("--> %s\n", cmd_str);
 		cmd_args = split_str(cmd_str);
+	}
 	else
 	{
 		/** Handle error appropriately here */

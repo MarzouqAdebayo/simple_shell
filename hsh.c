@@ -17,9 +17,10 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 	{
 		if (isatty(STDIN_FILENO))
 			prompt(NULL);
-		line = read();
-		cmd_args = parse(line);
+		line = _read();
+		cmd_args = _parse(line);
 		free(line);
+		free2DArray(cmd_args);
 	}
 	/** Parse */
 	/** Execute */

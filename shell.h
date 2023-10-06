@@ -6,12 +6,16 @@
 #include <unistd.h>
 
 void prompt(char *sym);
-char *read(void);
+char *_read(void);
+char **_parse(char *str);
 
 /** String util functions */
 int iswhitespace(char s);
 char *collapse_whitespace(char *old, char *new);
 size_t _strlen(const char *str);
 char *_strncpy(char *dest, const char *src, size_t n);
+
+/** Memory util functions */
+void free2DArray(char **arr);
 
 #endif
