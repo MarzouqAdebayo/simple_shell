@@ -9,8 +9,7 @@ char **_parse(char *str)
 	char *cmd_str = NULL, **cmd_args = NULL;
 
 	/** Remove duplicate whitespace */
-	cmd_str = collapse_whitespace(str, cmd_str);
-	free(str);
+	cmd_str = collapse_whitespace(str);
 	if (cmd_str)
 	{
 		printf("--> %s\n", cmd_str);
