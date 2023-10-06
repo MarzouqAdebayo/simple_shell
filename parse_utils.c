@@ -62,7 +62,7 @@ char *collapse_whitespace(char *old, char *new)
 	}
 	new[j] = '\0';
 	j++;
-	while (j <= old)
+	while (j < len)
 		new[j] = 0;
 	return (new);
 }
