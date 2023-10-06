@@ -66,7 +66,6 @@ char *collapse_whitespace(char *old)
 	}
 
 	new[j] = '\0';
-
 	return (new);
 }
 
