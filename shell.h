@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 void prompt(char *sym);
-char *_read(void);
+char *_read_fn(void);
 char **_parse(char *str);
 
 /** String util functions */

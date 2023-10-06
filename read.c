@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * read - Read a line of input from standard input.
+ * _read_fn - Read a line of input from standard input.
  *
  * Return: A pointer to the read line (including the newline character),
  *         or NULL on failure or end of file.
@@ -13,7 +13,7 @@
  * the program with an error code.
  */
 
-char *_read(void)
+char *_read_fn(void)
 {
 	char *line = NULL;
 	size_t len = 0;
