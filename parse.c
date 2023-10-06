@@ -14,7 +14,7 @@ char **_parse(char *str)
 	if (cmd_str)
 	{
 		printf("--> %s\n", cmd_str);
-		cmd_args = split_str(cmd_str);
+		cmd_args = split_str(cmd_str, ' ');
 	}
 	else
 	{
