@@ -37,7 +37,7 @@ char *collapse_whitespace(char *old, char *new)
 
 	if (old == NULL)
 		return (NULL);
-	new = malloc(sizeof(old));
+	new = malloc(sizeof(new) * (len + 1));
 	if (!new)
 		return (NULL);
 	while (old[i])
@@ -62,8 +62,8 @@ char *collapse_whitespace(char *old, char *new)
 	}
 	new[j] = '\0';
 	j++;
-	while (j < len)
-		new[j] = 0;
+	while (j <= len)
+		new[j] = '\0';
 	return (new);
 }
 
