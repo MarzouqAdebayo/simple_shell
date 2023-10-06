@@ -1,7 +1,15 @@
 #include "shell.h"
 
 /**
+ * _parse - Parses a string into an array of command arguments.
+ * @str: The string to be parsed.
  *
+ * Description: This function takes a string as input, removes duplicate
+ * whitespace, and splits it into an array of command arguments. The resulting
+ * array of strings is returned.
+ *
+ * Return: An array of strings representing the command arguments.
+ *         NULL if the parsing fails, and the function exits with failure.
  */
 
 char **_parse(char *str)
