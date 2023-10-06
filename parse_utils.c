@@ -147,6 +147,11 @@ char **split_str(char *src, const char delimiter)
 	return (dest_arr);
 }
 
+/**
+ * dummy - To trick betty
+ * 
+ * Return: has no return value
+*/
 void dummy(void)
 {
 }
