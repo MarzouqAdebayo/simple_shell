@@ -26,14 +26,14 @@ int iswhitespace(char s)
  * Return: A pointer to the newly allocated string with collapsed whitespace, or NULL on failure.
  *
  * This function takes an input string 'old' and creates a new string 'new' where multiple consecutive
- * whitespace characters (spaces, tabs, newlines, etc.) in 'old' are collapsed into a single space ' '.
+ * whitespace characters (spaces, tabs, newlines, etc.) in 'old' are collapsed into a single space ' ' and leading spaces are removed.
  * The 'new' string is dynamically allocated and must be freed by the caller when no longer needed.
  * If 'old' is NULL or memory allocation fails, the function returns NULL.
  */
 
 char *collapse_whitespace(char *old, char *new)
 {
-	int i = 0, j = 0, flag = 0;
+	int i = 0, j = 0, flag = 0, leading = 1, len = _strlen(old);
 
 	if (old == NULL)
 		return (NULL);
@@ -44,7 +44,7 @@ char *collapse_whitespace(char *old, char *new)
 	{
 		if (iswhitespace(old[i]))
 		{
-			if (!flag)
+			if (!flag && !leading)
 			{
 				new[j] = ' ';
 				j++;
@@ -53,6 +53,7 @@ char *collapse_whitespace(char *old, char *new)
 		}
 		else
 		{
+			leading = 0;
 			new[j] = old[i];
 			flag = 0;
 			j++;
@@ -60,6 +61,9 @@ char *collapse_whitespace(char *old, char *new)
 		i++;
 	}
 	new[j] = '\0';
+	j++;
+	while (j <= old)
+		new[j] = 0;
 	return (new);
 }
 
@@ -97,7 +101,6 @@ char **split_str(char *src, const char delimiter)
 		if (src[i] == delimiter && src[i + 1] && src[i + 1] != delimiter)
 			words_no++;
 	}
-	printf("The string has %d words and a length of %d\n", words_no, len);
 	dest_arr = malloc((words_no + 1) * sizeof(char *));
 	if (!dest_arr)
 		return (NULL);
@@ -120,7 +123,6 @@ char **split_str(char *src, const char delimiter)
 			}
 			_strncpy(dest_arr[word_index], src + word_start, word_length);
 			(dest_arr)[word_index][word_length] = '\0';
-			printf("%d. %s\n", word_index, (dest_arr)[word_index]);
 			word_start = i + 1;
 			word_index++;
 		}
