@@ -48,7 +48,7 @@ char *collapse_whitespace(char *old)
 	{
 		if (iswhitespace(old[i]))
 		{
-			if (!last_char_is_whitespace)
+			if (!last_char_is_whitespace && !leading_whitespace)
 			{
 				new[j] = ' ';
 				last_char_is_whitespace = 1;
