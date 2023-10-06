@@ -13,7 +13,7 @@
  * the program with an error code.
  */
 
-char *read(void)
+char *_read(void)
 {
 	char *line = NULL, **cmd_args = NULL;
 	size_t len = 0;
