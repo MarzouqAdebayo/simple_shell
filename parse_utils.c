@@ -149,7 +149,7 @@ char **split_str(char *src, const char delimiter)
 
 /**
  * dummy - To trick betty
- * 
+ *
  * Return: has no return value
 */
 void dummy(void)
