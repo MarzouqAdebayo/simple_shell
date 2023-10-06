@@ -31,7 +31,6 @@ char *_strncpy(char *dest, const char *src, size_t n)
 
 	for (i = 0; i < n && src[i]; i++)
 		dest[i] = src[i];
-	for (; i < n; i++)
-		dest[i] = '\0';
+	dest[i] = '\0';
 	return dest;
 }

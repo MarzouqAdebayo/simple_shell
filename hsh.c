@@ -17,7 +17,7 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 	{
 		if (isatty(STDIN_FILENO))
 			prompt(NULL);
-		line = _read();
+		line = _read_fn();
 		cmd_args = _parse(line);
 		free(line);
 		free2DArray(cmd_args);
