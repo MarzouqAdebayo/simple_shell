@@ -97,14 +97,15 @@ char **split_str(char *src, const char delimiter)
 		if (src[i] == delimiter && src[i + 1] && src[i + 1] != delimiter)
 			words_no++;
 	}
+	printf("The string has %d words and a length of %d\n", words_no, len);
 	dest_arr = malloc((words_no + 1) * sizeof(char *));
 	if (!dest_arr)
 		return (NULL);
 	word_start = 0;
 	word_index = 0;
-	for (i = 0; i < len; i++)
+	for (i = 0; i <= len; i++)
 	{
-		if (src[i] == delimiter || src[i] == '\0' || src[i] == '\n')
+		if (src[i] == delimiter || src[i] == '\0')
 		{
 			word_length = i - word_start;
 			if (word_length < 1)
@@ -119,12 +120,12 @@ char **split_str(char *src, const char delimiter)
 			}
 			_strncpy(dest_arr[word_index], src + word_start, word_length);
 			(dest_arr)[word_index][word_length] = '\0';
+			printf("%d. %s\n", word_index, (dest_arr)[word_index]);
 			word_start = i + 1;
 			word_index++;
 		}
 	}
 	dest_arr[words_no] = NULL;
-	free(src);
 
 	return (dest_arr);
 }
