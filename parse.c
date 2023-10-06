@@ -10,6 +10,7 @@ char **_parse(char *str)
 
 	/** Remove duplicate whitespace */
 	cmd_str = collapse_whitespace(str);
+	free(str);
 	if (cmd_str)
 	{
 		printf("--> %s\n", cmd_str);
