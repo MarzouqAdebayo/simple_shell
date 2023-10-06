@@ -13,7 +13,7 @@ size_t _strlen(const char *str)
 
 	while (str[len])
 		len++;
-	return len;
+	return (len);
 }
 
 /**
@@ -32,5 +32,5 @@ char *_strncpy(char *dest, const char *src, size_t n)
 	for (i = 0; i < n && src[i]; i++)
 		dest[i] = src[i];
 	dest[i] = '\0';
-	return dest;
+	return (dest);
 }
