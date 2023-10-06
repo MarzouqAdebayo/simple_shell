@@ -19,7 +19,6 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 			prompt(NULL);
 		line = _read_fn();
 		cmd_args = _parse(line);
-		free(line);
 		free2DArray(cmd_args);
 	}
 	/** Parse */
