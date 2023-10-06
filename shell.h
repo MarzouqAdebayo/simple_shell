@@ -19,4 +19,8 @@ char *_strncpy(char *dest, const char *src, size_t n);
 /** Memory util functions */
 void free2DArray(char **arr);
 
+/** Print util functions */
+int _putchar(char c);
+void _puts(char *str);
+
 #endif

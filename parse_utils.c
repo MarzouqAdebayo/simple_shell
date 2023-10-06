@@ -1,5 +1,7 @@
 #include "shell.h"
 
+void dummy(void);
+
 /**
  * iswhitespace - Checks if a character is a whitespace character.
  * @s: The character to be checked.
@@ -21,7 +23,6 @@ int iswhitespace(char s)
 /**
  * collapse_whitespace - Collapses multiple whitespace characters into a single space.
  * @old: The input string containing whitespace to be collapsed.
- * @new: A pointer to the new string with collapsed whitespace (output).
  *
  * Return: A pointer to the newly allocated string with collapsed whitespace, or NULL on failure.
  *
@@ -132,4 +133,8 @@ char **split_str(char *src, const char delimiter)
 	dest_arr[words_no] = NULL;
 
 	return (dest_arr);
+}
+
+void dummy(void)
+{
 }
