@@ -31,7 +31,7 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 		/** Parse */
 		cmd_args = _parse(line);
 		/** Execute */
-
+		_execute(cmd_args);
 		free2DArray(cmd_args);
 	}
 	return (0);
