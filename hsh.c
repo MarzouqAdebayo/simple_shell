@@ -1,27 +1,38 @@
 #include "shell.h"
 
 /**
- * main - contains the main function of the program
- * @argc: Arguments passed into the CLI
- * @argv: Pointer to arguments string
+ * main - Entry point of a simple Unix shell program.
+ * @argc: The argument count (unused).
+ * @argv: The argument vector (unused).
  *
- * Description: A simple UNIX shell
- * Return: Always 0
+ * Description:
+ * - This function serves as the entry point for a basic Unix shell program.
+ * - It repeatedly reads user input, parses commands, and executes them.
+ * - When running in an interactive terminal, it displays a shell prompt.
+ *
+ * Return:
+ * - Always returns 0, indicating successful execution (unused argc/argv
+ * convention).
+ *
+ * Usage:
+ * - Compile and run the program to start the Unix shell.
+ * - Users can input commands, which will be parsed and executed.
  */
 
 int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
-	/** Read */
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 			prompt(NULL);
+		/** Read */
 		line = _read_fn();
+		/** Parse */
 		cmd_args = _parse(line);
+		/** Execute */
+
 		free2DArray(cmd_args);
 	}
-	/** Parse */
-	/** Execute */
 	return (0);
 }
