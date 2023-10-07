@@ -14,6 +14,7 @@ void prompt(char *sym);
 char *_read_fn(void);
 char **_parse(char *str);
 void _execute(char **args);
+int run_command(char *command, char **args, char **env_vars);
 
 /** String util functions */
 int iswhitespace(char s);
@@ -30,7 +31,7 @@ void _puts(char *str);
 
 /** Env utils */
 char *_getenv(const char *name);
-int *_setenv(const char *name, const char *value);
+int *_setenv(void);
 
 /**  */
 int build_path(char **new_str, char *path, char *name);

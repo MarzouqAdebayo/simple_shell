@@ -52,7 +52,7 @@ char *_getenv(const char *name)
  * implement actual environment variable modification in this example.
  */
 
-int *_setenv(const char *name, const char *value)
+int *_setenv(void)
 {
 	return (0);
 }
