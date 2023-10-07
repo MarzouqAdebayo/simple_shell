@@ -44,7 +44,7 @@ void _execute(char **args)
 	if (stat(args[0], &info) == 0)
 	{
 		if (access(args[0], X_OK) == 0)
-			run_command(args[0], args, NULL);
+			run_command(args[0], args, environ);
 		else
 		{
 			perror("File exists but is not executable: ");
@@ -68,7 +68,7 @@ void _execute(char **args)
 			{
 				if (access(full_path, X_OK) == 0)
 				{
-					run_command(full_path, args, NULL);
+					run_command(full_path, args, environ);
 					{
 						free(path);
 						free(full_path);
