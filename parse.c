@@ -21,7 +21,6 @@ char **_parse(char *str)
 	free(str);
 	if (cmd_str)
 	{
-		printf("--> %s\n", cmd_str);
 		cmd_args = split_str(cmd_str, ' ');
 		/** Free cmd_str */
 		free(cmd_str);
