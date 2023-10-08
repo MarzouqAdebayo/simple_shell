@@ -22,7 +22,6 @@
 int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
-	char *shell_name;
 
 	if (argc > 0)
 		_strncpy(shell_name, argv[0], _strlen(argv[0]));
