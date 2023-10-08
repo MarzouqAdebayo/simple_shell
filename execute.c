@@ -81,7 +81,7 @@ void _execute(char **args)
 			free(full_path);
 			token = strtok(NULL, ":");
 		}
-		perror("Invalid command path");
+		print_error(1, args[0], "not found");
 		free(path);
 	}
 }

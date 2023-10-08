@@ -9,6 +9,7 @@
 #include <sys/wait.h>
 
 extern char **environ;
+extern char *shell_name;
 
 void prompt(char *sym);
 char *_read_fn(void);
@@ -22,12 +23,15 @@ char *collapse_whitespace(char *old);
 char **split_str(char *src, const char delimiter);
 size_t _strlen(const char *str);
 char *_strncpy(char *dest, const char *src, size_t n);
-	/** Memory util functions */
-	void free2DArray(char **arr);
+/** Memory util functions */
+void free2DArray(char **arr);
 
 /** Print util functions */
 int _putchar(char c);
 void _puts(char *str);
+void print_positive_number(int n);
+void print_number(int n);
+void print_error(int line_no, char *cmd, char *msg);
 
 /** Env utils */
 char *_getenv(const char *name);
