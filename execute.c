@@ -43,13 +43,7 @@ void _execute(char **args)
 
 	if (stat(args[0], &info) == 0)
 	{
-		if (access(args[0], X_OK) == 0)
-			run_command(args[0], args, environ);
-		else
-		{
-			perror("1. File exists but is not executable: ");
-			return;
-		}
+		run_command(args[0], args, environ);
 	}
 	else
 	{
