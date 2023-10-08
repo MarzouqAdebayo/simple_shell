@@ -22,7 +22,7 @@
 int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
-	char *shell_name = argv[0];
+	char *shell_name __attribute__((unused)) = argv[0];
 
 	while (1)
 	{
