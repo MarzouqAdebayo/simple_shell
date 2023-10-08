@@ -83,6 +83,8 @@ void print_number(int n)
 
 void print_error(int line_no, char *cmd, char *msg)
 {
+	char *shell_name;
+
 	if (!msg)
 	{
 		msg = " not found";
