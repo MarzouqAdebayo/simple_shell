@@ -1,5 +1,7 @@
 #include "shell.h"
 
+char *shell_name;
+
 /**
  * main - Entry point of a simple Unix shell program.
  * @argc: The argument count (unused).
