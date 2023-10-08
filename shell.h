@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 
 extern char **environ;
-extern char *shell_name;
+extern char *shell_name = "";
 
 void prompt(char *sym);
 char *_read_fn(void);
