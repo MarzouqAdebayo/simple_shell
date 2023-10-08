@@ -21,6 +21,7 @@ char *_read_fn(void)
 	ssize_t bytes_read = 0;
 
 	bytes_read = getline(&line, &len, stdin);
+	printf("%s", line);
 	if (bytes_read == -1)
 	{
 		free(line);
