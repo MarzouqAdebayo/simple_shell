@@ -1,6 +1,6 @@
 #include "shell.h"
 
-char *shell_name;
+char shell_name[30];
 
 /**
  * main - Entry point of a simple Unix shell program.
