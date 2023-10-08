@@ -35,3 +35,64 @@ void _puts(char *str)
 		++i;
 	}
 }
+
+/**
+ * print_positive_number - Body of the function
+ * @n: The argument n to be printed
+ *
+ * Description: Prints numbers using putchar
+ * Return: has no return value
+ */
+
+void print_positive_number(int n)
+{
+	if (n < 1)
+		return;
+
+	print_positive_number(n / 10);
+	_putchar(48 + (n % 10));
+}
+
+/**
+ * print_number - Body of the function
+ * @n: The argument n to be printed
+ *
+ * Description: Prints numbers using putchar
+ * Return: has no return value
+ */
+void print_number(int n)
+{
+	if (n == 0)
+	{
+		_putchar(48);
+		return;
+	}
+
+	if (n < 0)
+	{
+		n = n * -1;
+		printf("%d\n", n);
+		_putchar('-');
+	}
+	print_positive_number(n);
+}
+
+/**
+ *
+*/
+
+void print_error(int line_no, char *cmd, char *msg)
+{
+	if (!msg)
+	{
+		msg = " not found";
+	}
+	_puts(shell_name);
+	_puts(": ");
+	print_number(line_no);
+	_puts(": ");
+	_puts(cmd);
+	_puts(": ");
+	_puts(msg);
+	_putchar('\n');
+}

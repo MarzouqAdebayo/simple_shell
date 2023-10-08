@@ -22,6 +22,8 @@
 int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
+
+	shell_name = argv[0];
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
