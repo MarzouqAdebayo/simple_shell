@@ -47,7 +47,7 @@ void _execute(char **args)
 			run_command(args[0], args, environ);
 		else
 		{
-			perror("File exists but is not executable: ");
+			perror("1. File exists but is not executable: ");
 			return;
 		}
 	}
@@ -76,7 +76,7 @@ void _execute(char **args)
 					return;
 				}
 				else
-					perror("File exists but is not executable: ");
+					perror("2. File exists but is not executable: ");
 			}
 			free(full_path);
 			token = strtok(NULL, ":");
