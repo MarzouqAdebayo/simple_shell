@@ -23,12 +23,9 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
 	char *shell_name;
-	
+
 	if (argc > 0)
-	{
-		shell_name = malloc(sizeof(argv[0]));
 		_strncpy(shell_name, argv[0], _strlen(argv[0]));
-	}
 
 	while (1)
 	{
@@ -42,7 +39,5 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 		_execute(cmd_args);
 		free2DArray(cmd_args);
 	}
-	if (shell_name)
-		free(shell_name);
 	return (0);
 }
