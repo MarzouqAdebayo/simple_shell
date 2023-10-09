@@ -41,39 +41,29 @@ void _execute(char **args)
 		return;
 	}
 
-	if (stat(args[0], &info) == 0)
-	{
-		if (access(args[0], X_OK) == 0)
-			run_command(args[0], args, environ);
-		else
-			perror();
-	}
+	if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
+		run_command(args[0], args, environ);
 	else
 	{
 		path = _getenv("PATH");
 		if (!path)
 		{
 			free(path);
-			perror("Path Does not exist: ");
+			perror("Environment variable Path does not exist: ");
 			return;
 		}
 		token = strtok(path, ":");
 		while (token)
 		{
 			build_path(&full_path, token, args[0]);
-			if (stat(full_path, &info) == 0)
+			if (stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
 			{
-				if (access(full_path, X_OK) == 0)
+				run_command(full_path, args, environ);
 				{
-					run_command(full_path, args, environ);
-					{
-						free(full_path);
-						free(path);
-					}
-					return;
+					free(full_path);
+					free(path);
 				}
-				else
-					perror("2. File exists but is not executable: ");
+				return;
 			}
 			free(full_path);
 			token = strtok(NULL, ":");
