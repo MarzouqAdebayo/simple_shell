@@ -37,7 +37,7 @@ void _execute(char **args)
 
 	if (!args || !args[0])
 	{
-		perror("No argument passed:");
+		perror("No argument passed");
 		return;
 	}
 
@@ -46,10 +46,7 @@ void _execute(char **args)
 		if (access(args[0], X_OK) == 0)
 			run_command(args[0], args, environ);
 		else
-		{
-			perror("1. File exists but is not executable: ");
-			return;
-		}
+			perror();
 	}
 	else
 	{
@@ -70,8 +67,8 @@ void _execute(char **args)
 				{
 					run_command(full_path, args, environ);
 					{
-						free(path);
 						free(full_path);
+						free(path);
 					}
 					return;
 				}
