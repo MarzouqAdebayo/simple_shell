@@ -64,8 +64,6 @@ void _execute(char **args)
 					free(path);
 					return;
 				}
-				else
-					perror();
 				free(full_path);
 			}
 			token = strtok(NULL, ":");
