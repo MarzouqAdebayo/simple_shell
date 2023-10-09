@@ -56,3 +56,30 @@ int *_setenv(void)
 {
 	return (0);
 }
+
+/**
+ *
+*/
+
+int path_with_current(char *path)
+{
+	int i = 0, flag = 1;
+
+	if (!path)
+		return (-1);
+
+	while (path[i])
+	{
+		if (path[i] == ':' && flag)
+			return (1);
+		if (path[i] == ':')
+			flag = 1;
+		else
+			flag = 0;
+		i++;
+	}
+	if (flag)
+		return (1);
+
+	return (0);
+}
