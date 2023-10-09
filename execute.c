@@ -64,22 +64,19 @@ void _execute(char **args)
 		while (token)
 		{
 			build_path(&full_path, token, args[0]);
+			printf("%s\n", full_path)
 			if (stat(full_path, &info) == 0)
 			{
 				if (access(full_path, X_OK) == 0)
 				{
-					run_command(full_path, args, environ);
-					{
-						free(path);
-						free(full_path);
-					}
-					return;
+					printf("72. Can run program\n")
 				}
 				else
-					perror("2. File exists but is not executable: ");
+					perror("75. ");
 			}
 			free(full_path);
 			token = strtok(NULL, ":");
+			printf("-------------------------------\n")
 		}
 		print_error(1, args[0], "not found");
 		free(path);
