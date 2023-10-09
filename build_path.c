@@ -32,7 +32,7 @@ int build_path(char **new_str, char *path, char *name)
 		return (-1);
 	}
 	i = 0;
-	while (i < len - 1)
+	while (i < len)
 	{
 		while (path[i])
 		{
@@ -51,7 +51,8 @@ int build_path(char **new_str, char *path, char *name)
 			j++;
 			continue;
 		}
+		(*new_str)[j] = '\0';
+		return (0);
 	}
-	(*new_str)[j] = '\0';
 	return (0);
 }
