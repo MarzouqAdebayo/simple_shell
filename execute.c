@@ -56,7 +56,7 @@ void _execute(char **args)
 			perror("Environment variable Path does not exist: ");
 			return;
 		}
-		if (path_with_current(paths[i]) && build_path(&full_path, "./", args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
+		if (path_with_current(path) && build_path(&full_path, "./", args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
 		{
 			if (run_command(full_path, args, environ) == 0)
 			{
