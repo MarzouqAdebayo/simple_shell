@@ -59,7 +59,7 @@ int *_setenv(void)
 
 /**
  *
-*/
+ */
 
 int path_with_current(char *path)
 {
@@ -72,7 +72,9 @@ int path_with_current(char *path)
 	{
 		if (path[i] == ':' && flag)
 			return (1);
-		if (path[i] == ':')
+		if (path[i] == '.')
+			return (1);
+		else if (path[i] == ':')
 			flag = 1;
 		else
 			flag = 0;
