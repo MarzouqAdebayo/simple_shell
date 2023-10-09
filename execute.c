@@ -47,6 +47,11 @@ void _execute(char **args)
 		if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
 			run_command(args[0], args, environ);
 	}
+	else if (args[0] && args[0][0] == '.')
+		{
+			if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
+				run_command(args[0], args, environ);
+		}
 	else
 	{
 		path = _getenv("PATH");
