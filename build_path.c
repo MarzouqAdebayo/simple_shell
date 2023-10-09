@@ -51,8 +51,7 @@ int build_path(char **new_str, char *path, char *name)
 			j++;
 			continue;
 		}
-		(*new_str)[j] = '\0';
-		return (0);
 	}
+	(*new_str)[j] = '\0';
 	return (0);
 }

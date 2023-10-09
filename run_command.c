@@ -44,7 +44,7 @@ int run_command(char *command, char **args, char **env_vars)
 	{
 		if (execve(command, args, env_vars) == -1)
 		{
-			perror("Does not execute Error:");
+			perror("Error");
 			exit(EXIT_FAILURE);
 		}
 	}
