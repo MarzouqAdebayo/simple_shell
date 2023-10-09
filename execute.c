@@ -49,7 +49,6 @@ void _execute(char **args)
 		if (run_command(full_path, args, environ) == 0)
 		{
 			free(full_path);
-			free(path);
 			return;
 		}
 		free(full_path);
