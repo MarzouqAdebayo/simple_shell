@@ -32,7 +32,7 @@ int run_command(char *command, char **args, char **env_vars)
 	int status;
 
 	if (!command)
-		return (0);
+		return (-1);
 
 	child_pid = fork();
 	if (child_pid == -1)

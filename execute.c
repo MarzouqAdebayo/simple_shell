@@ -37,46 +37,36 @@ void _execute(char **args)
 
 	if (!args || !args[0])
 	{
-		perror("No argument passed:");
+		perror("No argument passed");
 		return;
 	}
 
-	if (stat(args[0], &info) == 0)
-	{
-		if (access(args[0], X_OK) == 0)
-			run_command(args[0], args, environ);
-		else
-		{
-			perror("1. File exists but is not executable: ");
-			return;
-		}
-	}
+	if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
+		run_command(args[0], args, environ);
 	else
 	{
 		path = _getenv("PATH");
 		if (!path)
 		{
 			free(path);
-			perror("Path Does not exist: ");
+			perror("Environment variable Path does not exist: ");
 			return;
 		}
 		token = strtok(path, ":");
 		while (token)
 		{
 			build_path(&full_path, token, args[0]);
-			printf("%s\n", full_path)
-			if (stat(full_path, &info) == 0)
+			if (stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
 			{
-				if (access(full_path, X_OK) == 0)
+				run_command(full_path, args, environ);
 				{
-					printf("72. Can run program\n")
+					free(full_path);
+					free(path);
 				}
-				else
-					perror("75. ");
+				return;
 			}
 			free(full_path);
 			token = strtok(NULL, ":");
-			printf("-------------------------------\n")
 		}
 		print_error(1, args[0], "not found");
 		free(path);
