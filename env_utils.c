@@ -132,13 +132,13 @@ int use_path(char *cmd_path)
 	int i = 0;
 
 	if (strncmp(cmd_path, "./", 2) == 0 || strncmp(cmd_path, "/", 1) == 0)
-		return (0);
+		return (1);
 	while (cmd_path[i])
 	{
 		if (cmd_path[i] == '/')
-			return (0);
+			return (1);
 		i++;
 	}
 
-	return (1);
+	return (0);
 }

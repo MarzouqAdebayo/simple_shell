@@ -41,7 +41,6 @@ void _execute(char **args)
 		return;
 	}
 
-	/** Check current directory first then check those listed in path */
 	if (use_path(args[0]))
 	{
 		if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
