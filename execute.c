@@ -70,7 +70,7 @@ void _execute(char **args)
 			}
 			token = strtok(NULL, ":");
 		}
-		print_error(1, args[0], "not found");
 		free(path);
 	}
+	print_error(1, args[0], "not found");
 }
