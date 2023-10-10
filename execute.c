@@ -44,7 +44,10 @@ void _execute(char **args)
 	if (use_path(args[0]))
 	{
 		if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
+		{
 			run_command(args[0], args, environ);
+			return;
+		}
 	}
 	else
 	{
@@ -55,6 +58,7 @@ void _execute(char **args)
 			return;
 		}
 		path = path_with_current(raw_path);
+		free(raw_path);
 		token = strtok(path, ":");
 		while (token)
 		{
