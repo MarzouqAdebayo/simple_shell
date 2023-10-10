@@ -58,7 +58,6 @@ void _execute(char **args)
 			return;
 		}
 		path = path_with_current(raw_path);
-		free(raw_path);
 		token = strtok(path, ":");
 		while (token)
 		{
