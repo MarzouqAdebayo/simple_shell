@@ -26,8 +26,6 @@ int check_builtin(char *command)
 	if (strncmp(cmd, "exit", 4) == 0)
 	{
 		_exit_(cmd);
-		free(cmd);
-		return (1);
 	}
 	free(cmd);
 
