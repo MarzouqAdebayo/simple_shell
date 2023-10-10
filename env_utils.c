@@ -114,7 +114,6 @@ char *path_with_current(char *path)
 		}
 		else
 			keep[j] = '\0';
-		// free(keep);
 	}
 	if (keep)
 	{

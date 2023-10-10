@@ -42,7 +42,7 @@ void _execute(char **args)
 	}
 
 	/** Check current directory first then check those listed in path */
-	if (use_path(args[0][0]))
+	if (use_path(args[0]))
 	{
 		if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
 			run_command(args[0], args, environ);
