@@ -9,19 +9,23 @@
 
 int check_builtin(char *command)
 {
+	char *cmd;
+
 	if (!command)
 		return (-1);
-
+	/** Cleanup string */
+	cmd = collapse_whitespace(command);
+	free(command);
 	/** use 2D array and function pointers if list gets long */
-	if (strncmp(command, "env", 3) >= 0)
+	if (strncmp(cmd, "env", 3) == 0)
 	{
 		print_env();
 		return (1);
 	}
 
-	if (strncmp(command, "exit", 4) >= 0)
+	if (strncmp(cmd, "exit", 4) == 0)
 	{
-		_exit_(command);
+		_exit_(cmd);
 		return (1);
 	}
 
