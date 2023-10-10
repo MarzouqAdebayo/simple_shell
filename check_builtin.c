@@ -5,7 +5,7 @@
  * @command: command to executer
  *
  * Return: 1, 0 or -1
-*/
+ */
 
 int check_builtin(char *command)
 {
@@ -19,12 +19,14 @@ int check_builtin(char *command)
 	if (strncmp(cmd, "env", 3) == 0)
 	{
 		print_env();
+		free(cmd);
 		return (1);
 	}
 
 	if (strncmp(cmd, "exit", 4) == 0)
 	{
 		_exit_(cmd);
+		free(cmd);
 		return (1);
 	}
 	free(cmd);
