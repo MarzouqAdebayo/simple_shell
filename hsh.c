@@ -36,7 +36,10 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 		line = _read_fn();
 		/** Check if it a built in */
 		if (check_builtin(line) == 1)
+		{
+			free(line);
 			continue;
+		}
 		/** Parse */
 		cmd_args = _parse(line);
 		/** Execute */
