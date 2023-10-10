@@ -72,6 +72,7 @@ char *collapse_whitespace(char *old)
 		}
 		i++;
 	}
+
 	new[j] = '\0';
 	return (new);
 }

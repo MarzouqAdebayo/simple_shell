@@ -18,6 +18,7 @@ char **_parse(char *str)
 
 	/** Remove duplicate whitespace */
 	cmd_str = collapse_whitespace(str);
+	free(str);
 	if (cmd_str)
 	{
 		cmd_args = split_str(cmd_str, ' ');
