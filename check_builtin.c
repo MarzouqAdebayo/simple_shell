@@ -15,7 +15,6 @@ int check_builtin(char *command)
 		return (-1);
 	/** Cleanup string */
 	cmd = collapse_whitespace(command);
-	free(command);
 	/** use 2D array and function pointers if list gets long */
 	if (strncmp(cmd, "env", 3) == 0)
 	{
