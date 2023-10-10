@@ -61,27 +61,85 @@ int *_setenv(void)
  *
  */
 
-int path_with_current(char *path)
+char *path_with_current(char *path)
 {
-	int i = 0, flag = 1;
+	int i = 0, j, len = 0, flag = 1, index = -1;
+	char *keep = NULL;
 
 	if (!path)
-		return (-1);
+		return (NULL);
 
 	while (path[i])
 	{
 		if (path[i] == ':' && flag)
-			return (1);
-		if (path[i] == '.')
-			return (1);
+		{
+			index = i;
+			break;
+		}
 		else if (path[i] == ':')
 			flag = 1;
 		else
 			flag = 0;
 		i++;
 	}
-	if (flag)
-		return (1);
+	if (flag && index == -1)
+		index = i;
 
-	return (0);
+	if (index > -1)
+	{
+
+		len = strlen(path);
+		keep = malloc(sizeof(char) * (len + 2));
+		if (!keep)
+			return (NULL);
+		i = 0;
+		j = 0;
+		while (path[i])
+		{
+			if (j == index)
+			{
+				keep[j] = '.';
+				flag = 0;
+				j++;
+				continue;
+			}
+			keep[j] = path[i];
+			i++;
+			j++;
+		}
+		if (flag)
+		{
+			keep[j] = '.';
+			keep[j + 1] = '\0';
+		}
+		else
+			keep[j] = '\0';
+		// free(keep);
+	}
+	if (keep)
+	{
+		free(path);
+		return (keep);
+	}
+	return (path);
+}
+
+/**
+ *
+ */
+
+int use_path(char *cmd_path)
+{
+	int i = 0;
+
+	if (strncmp(cmd_path, "./", 2) == 0 || strncmp(cmd_path, "/", 1) == 0)
+		return (0);
+	while (cmd_path[i])
+	{
+		if (cmd_path[i] == '/')
+			return (0);
+		i++;
+	}
+
+	return (1);
 }
