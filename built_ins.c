@@ -30,5 +30,6 @@ void _exit_(char *str)
 	token = strtok(NULL, " ");
 	if (token)
 		status = atoi(token);
+	free(str);
 	exit(status);
 }
