@@ -42,4 +42,9 @@ int use_path(char *cmd_path);
 /**  */
 int build_path(char **new_str, char *path, char *name);
 
+/** Built-ins */
+int check_builtin(char *command);
+void print_env();
+void _exit_(char *str);
+
 #endif
