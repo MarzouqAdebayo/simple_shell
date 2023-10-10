@@ -115,12 +115,10 @@ char *path_with_current(char *path)
 		else
 			keep[j] = '\0';
 	}
-	if (keep)
-	{
-		free(path);
-		return (keep);
-	}
-	return (path);
+	else
+		keep = strdup(path);
+	free(path);
+	return (keep);
 }
 
 /**
