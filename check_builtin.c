@@ -13,7 +13,7 @@ int check_builtin(char *command)
 		return (-1);
 
 	/** use 2D array and function pointers if list gets long */
-	if (_strncmp("env", command, 3) == 0)
+	if (strncmp("env", command, 3) == 0)
 	{
 		print_env();
 		return (1);
