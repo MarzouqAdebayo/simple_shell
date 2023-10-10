@@ -27,10 +27,7 @@ int build_path(char **new_str, char *path, char *name)
 	/** Allocated memory to arguments array */
 	*new_str = malloc(sizeof(*new_str) * len);
 	if (!(*new_str))
-	{
-		free(*new_str);
 		return (-1);
-	}
 	i = 0;
 	while (i < len)
 	{

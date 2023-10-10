@@ -17,7 +17,6 @@ void print_env()
 		_puts(environ[i]);
 		_putchar('\n');
 	}
-	return;
 }
 
 /**
