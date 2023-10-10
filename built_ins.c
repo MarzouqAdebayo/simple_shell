@@ -32,6 +32,7 @@ void _exit_(char *str)
 	if (token)
 		status = atoi(token);
 	free(str);
-	_puts("Exiting hsh...");
+
+	printf("Exiting hsh with status %d...", status);
 	exit(status);
 }
