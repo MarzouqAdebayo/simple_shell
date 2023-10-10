@@ -10,7 +10,7 @@ void print_env()
 {
 	int i;
 
-	puts("printing env ..."\n);
+	puts("printing env ...\n");
 	/** Iterate through `environ` to print all environment variables */
 	for (i = 0; environ[i]; i++)
 	{
@@ -32,6 +32,6 @@ void _exit_(char *str)
 	token = strtok(NULL, " ");
 	if (token)
 		status = atoi(token);
-	puts("exiting hsh ..."\n);
+	puts("exiting hsh ...\n");
 	exit(status);
 }
