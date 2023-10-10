@@ -36,6 +36,8 @@ void print_error(int line_no, char *cmd, char *msg);
 /** Env utils */
 char *_getenv(const char *name);
 int *_setenv(void);
+char *path_with_current(char *path);
+int use_path(char *cmd_path);
 
 /**  */
 int build_path(char **new_str, char *path, char *name);

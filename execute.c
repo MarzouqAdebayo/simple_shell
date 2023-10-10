@@ -32,7 +32,7 @@
 
 void _execute(char **args)
 {
-	char *path, *token, *full_path = NULL;
+	char *raw_path, *path, *token, *full_path = NULL;
 	struct stat info;
 
 	if (!args || !args[0])
@@ -41,31 +41,23 @@ void _execute(char **args)
 		return;
 	}
 
-	/** Check current directory first then check those listed in path */
-	if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
-		run_command(args[0], args, environ);
-	else if ()
+	if (use_path(args[0]))
 	{
-		if (build_path(&full_path, "./", args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
+		if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
 		{
-			if (run_command(full_path, args, environ) == 0)
-			{
-				free(full_path);
-				free(path);
-				return;
-			}
-			free(full_path);
+			run_command(args[0], args, environ);
+			return;
 		}
 	}
 	else
 	{
-		path = _getenv("PATH");
-		if (!path)
+		raw_path = _getenv("PATH");
+		if (!raw_path)
 		{
-			free(path);
 			perror("Environment variable Path does not exist: ");
 			return;
 		}
+		path = path_with_current(raw_path);
 		token = strtok(path, ":");
 		while (token)
 		{
@@ -77,11 +69,12 @@ void _execute(char **args)
 					free(path);
 					return;
 				}
-				free(full_path);
 			}
+			if (full_path)
+				free(full_path);
 			token = strtok(NULL, ":");
 		}
-		print_error(1, args[0], "not found");
 		free(path);
 	}
+	print_error(1, args[0], "not found");
 }
