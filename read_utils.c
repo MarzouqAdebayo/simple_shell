@@ -49,8 +49,7 @@ ssize_t _getline(char **lineptr, size_t *n, int fd)
 		{
 			if (index == 0)
 				return (-1);
-			else
-				break;
+			break;
 		}
 
 		if ((index + 1) >= (*n))
