@@ -36,50 +36,56 @@ void _execute(char **args)
 {
 	char *raw_path, *path, *token, *full_path = NULL;
 	struct stat info;
+	int i;
 
 	if (!args || !args[0])
 	{
 		perror("No argument passed");
 		return;
 	}
-	printf("Line 45. %s\n", args[0]);
+	printf("Line 45. ");
+	for (i = 0; args[0][i]; i++)
+	{
+		if (args[0][i] == ' ' || args[0][i] == '\n' || args[0][i] == '\t' || args[0][i] == '\r')
+			putchar(args[0][i])
+	}
+	printf("\n");
 
-	if (use_path(args[0]))
-	{
-		if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
+		if (use_path(args[0]))
 		{
-			run_command(args[0], args, environ);
-			return;
-		}
-	}
-	else
-	{
-		raw_path = _getenv("PATH");
-		if (!raw_path)
-		{
-			perror("Environment variable Path does not exist: ");
-			return;
-		}
-		path = path_with_current(raw_path);
-		token = _strtok(path, ":");
-		while (token)
-		{
-			if (build_path(&full_path, token, args[0]) == 0 && stat(full_path,
-			&info) == 0 && access(full_path, X_OK) == 0)
+			if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
 			{
-				if (run_command(full_path, args, environ) == 0)
-				{
-					free(full_path);
-					free(path);
-					return;
-				}
+				run_command(args[0], args, environ);
+				return;
 			}
-			if (full_path)
-				free(full_path);
-			token = _strtok(NULL, ":");
 		}
-		free(path);
-	}
+		else
+		{
+			raw_path = _getenv("PATH");
+			if (!raw_path)
+			{
+				perror("Environment variable Path does not exist: ");
+				return;
+			}
+			path = path_with_current(raw_path);
+			token = _strtok(path, ":");
+			while (token)
+			{
+				if (build_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
+				{
+					if (run_command(full_path, args, environ) == 0)
+					{
+						free(full_path);
+						free(path);
+						return;
+					}
+				}
+				if (full_path)
+					free(full_path);
+				token = _strtok(NULL, ":");
+			}
+			free(path);
+		}
 	print_error(args[0], "not found", NULL);
 }
 
