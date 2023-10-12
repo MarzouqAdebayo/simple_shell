@@ -6,26 +6,18 @@ void dummy2(void);
  * iswhitespace - Checks if a character is a whitespace character.
  * @s: The character to be checked.
  *
- * Return: character interger if 's' is a whitespace character, 0 otherwise.
+ * Return: 1 if 's' is a whitespace character, 0 otherwise.
  *
  * This function determines whether the input character 's' is a whitespace
  * character.
- * Whitespace characters include space (' '), tab ('\t'), newline ('\n'), and
- * carriage return ('\r').
- * It returns character integer if 's' is a whitespace character, and 0
+ * It returns 1 if 's' is a whitespace character, and 0
  * otherwise.
  */
 
 int iswhitespace(char s)
 {
 	if (s == ' ')
-		return (' ');
-	if (s == '\t')
-		return ('\t');
-	if (s == '\n')
-		return ('\n');
-	if (s == '\r')
-		return ('\r');
+		return (1);
 	return (0);
 }
 
@@ -65,7 +57,7 @@ char *collapse_whitespace(char *old)
 		{
 			if (!last_char_is_whitespace && !leading_whitespace)
 			{
-				new[j] = iswhitespace(old[i]);
+				new[j] = ' ';
 				last_char_is_whitespace = 1;
 				j++;
 			}
