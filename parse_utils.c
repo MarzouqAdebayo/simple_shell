@@ -16,7 +16,7 @@ void dummy2(void);
 
 int iswhitespace(char s)
 {
-	if (s == ' ')
+	if (s == ' ' || s == '\t' || s == '\n' || s == '\r')
 		return (1);
 	return (0);
 }
