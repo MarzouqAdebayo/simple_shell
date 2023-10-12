@@ -19,7 +19,7 @@
 
 int build_path(char **new_str, char *path, char *name)
 {
-	int len = strlen(path) + strlen(name) + 2, i, j = 0;
+	int len = _strlen(path) + _strlen(name) + 2, i, j = 0;
 
 	if (!new_str || !path || !name)
 		return (-1);

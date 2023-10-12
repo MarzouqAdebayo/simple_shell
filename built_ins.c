@@ -26,8 +26,8 @@ void _exit_(char *str)
 	int status = 0;
 	char *token;
 
-	strtok(str, " ");
-	token = strtok(NULL, " ");
+	_strtok(str, " ");
+	token = _strtok(NULL, " ");
 	if (token)
 		status = atoi(token);
 	free(str);
