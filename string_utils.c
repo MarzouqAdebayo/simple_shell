@@ -59,7 +59,7 @@ char *_strncpy(char *dest, const char *src, size_t n)
 
 char *_strtok(char *str, const char *delim)
 {
-	static char *copy = NULL;
+	static char *copy;
 	char *token = NULL;
 	static int i = 0, flag = 1;
 	int j, k, delim_len = strlen(delim);
@@ -123,9 +123,10 @@ int _atoi(char *s)
 }
 
 /**
- * _strcmp - Compares two strings
+ * _strncmp - Compares two strings
  * @s1: Pointer to string one
  * @s2: Pointer to string two
+ * @n: number of bytes to be compared
  *
  * Return: return 0 if same and 1 otherwise
  */
@@ -141,7 +142,7 @@ int _strncmp(const char *s1, const char *s2, size_t n)
 		n--;
 	}
 	if (n == 0)
-		return 0;
+		return (0);
 	else
 		return (*s1 - *s2);
 }
