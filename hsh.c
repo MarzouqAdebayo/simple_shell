@@ -1,6 +1,7 @@
 #include "shell.h"
 
 char shell_name[30];
+int line_no;
 
 /**
  * main - Entry point of a simple Unix shell program.
@@ -24,7 +25,8 @@ char shell_name[30];
 int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
-
+	
+	line_no = 0
 	if (argc > 0)
 		_strncpy(shell_name, argv[0], _strlen(argv[0]));
 
