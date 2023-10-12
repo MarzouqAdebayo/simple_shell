@@ -20,7 +20,7 @@ char *_read_fn(void)
 	size_t len = 0;
 	ssize_t bytes_read = 0;
 
-	bytes_read = getline(&line, &len, stdin);
+	bytes_read = _getline(&line, &len, stdin);
 	if (bytes_read == -1)
 	{
 		free(line);
