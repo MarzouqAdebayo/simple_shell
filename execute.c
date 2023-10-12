@@ -58,10 +58,11 @@ void _execute(char **args)
 			return;
 		}
 		path = path_with_current(raw_path);
-		token = strtok(path, ":");
+		token = _strtok(path, ":");
 		while (token)
 		{
-			if (build_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
+			if (build_path(&full_path, token, args[0]) == 0 && stat(full_path,
+			&info) == 0 && access(full_path, X_OK) == 0)
 			{
 				if (run_command(full_path, args, environ) == 0)
 				{
@@ -72,7 +73,7 @@ void _execute(char **args)
 			}
 			if (full_path)
 				free(full_path);
-			token = strtok(NULL, ":");
+			token = _strtok(NULL, ":");
 		}
 		free(path);
 	}
