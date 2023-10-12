@@ -71,6 +71,7 @@ char *_strtok(char *str, const char *delim)
 	{
 		copy = str;
 		i = 0;
+		flag = 1;
 	}
 
 	while (1)
