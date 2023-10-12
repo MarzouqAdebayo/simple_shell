@@ -1,5 +1,7 @@
 #include "shell.h"
 
+int line_no;
+
 /**
  * _read_fn - Read a line of input from standard input.
  *
