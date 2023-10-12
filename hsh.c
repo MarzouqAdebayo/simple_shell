@@ -25,8 +25,8 @@ int line_no;
 int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
-	
-	line_no = 0
+
+	line_no = 0;
 	if (argc > 0)
 		_strncpy(shell_name, argv[0], _strlen(argv[0]));
 
