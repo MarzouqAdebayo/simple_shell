@@ -34,7 +34,7 @@ int _putchar(char c);
 void _puts(char *str);
 void print_positive_number(int n);
 void print_number(int n);
-void print_error(int line_no, char *cmd, char *msg);
+void print_error(int line_no, char *cmd, char *msg, int *code);
 
 /** Env utils */
 char *_getenv(const char *name);

@@ -23,7 +23,7 @@ char *_getenv(const char *name)
 	if (name == NULL)
 		return NULL;
 
-	len = strlen(name);
+	len = _strlen(name);
 	/** Iterate through `environ` to print all environment variables */
 	for (i = 0; environ[i]; i++)
 	{
@@ -88,7 +88,7 @@ char *path_with_current(char *path)
 	if (index > -1)
 	{
 
-		len = strlen(path);
+		len = _strlen(path);
 		keep = malloc(sizeof(char) * (len + 2));
 		if (!keep)
 			return (NULL);
