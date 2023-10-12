@@ -33,7 +33,8 @@ void _exit_(char *str)
 		status = _atoi(token);
 		if (status < 0)
 		{
-			print_error(1, exit, "Illegal number", &status)
+			print_error(1, exit, "Illegal number", &status);
+			return;
 		}
 	}
 
