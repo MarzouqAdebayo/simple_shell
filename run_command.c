@@ -37,7 +37,7 @@ int run_command(char *command, char **args, char **env_vars)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		perror("fork");
+		perror("Could not fork child process");
 		return (-1);
 	}
 	if (child_pid == 0)
@@ -49,6 +49,6 @@ int run_command(char *command, char **args, char **env_vars)
 		}
 	}
 	else
-		wait(&status);
+		waitpid(child_pid, &status, 0);
 	return (0);
 }

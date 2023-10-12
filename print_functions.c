@@ -79,9 +79,9 @@ void print_number(int n)
 
 /**
  *
-*/
+ */
 
-void print_error(int line_no, char *cmd, char *msg)
+void print_error(int line_no, char *cmd, char *msg, int *code)
 {
 	if (!msg)
 	{
@@ -94,5 +94,10 @@ void print_error(int line_no, char *cmd, char *msg)
 	_puts(cmd);
 	_puts(": ");
 	_puts(msg);
+	if (code)
+	{
+		_puts(": ");
+		print_number(*code);
+	}
 	_putchar('\n');
 }

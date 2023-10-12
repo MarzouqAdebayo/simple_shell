@@ -76,5 +76,5 @@ void _execute(char **args)
 		}
 		free(path);
 	}
-	print_error(1, args[0], "not found");
+	print_error(1, args[0], "not found", NULL);
 }
