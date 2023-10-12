@@ -19,7 +19,7 @@ ssize_t _getline(char **lineptr, size_t *n, int fd)
 {
 	char c;
 	char *temp_buffer;
-	size_t index;
+	size_t index = 0;
 	ssize_t _byte;
 
 	if (!lineptr || !n)
