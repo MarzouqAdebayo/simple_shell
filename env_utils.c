@@ -27,7 +27,7 @@ char *_getenv(const char *name)
 	/** Iterate through `environ` to print all environment variables */
 	for (i = 0; environ[i]; i++)
 	{
-		if (strncmp(environ[i], name, len) == 0 && environ[i][len] == '=')
+		if (_strncmp(environ[i], name, len) == 0 && environ[i][len] == '=')
 		{
 			/** compare env variable to name */
 			/** remember to free temp to prevent memory leaks */
@@ -129,7 +129,7 @@ int use_path(char *cmd_path)
 {
 	int i = 0;
 
-	if (strncmp(cmd_path, "./", 2) == 0 || strncmp(cmd_path, "/", 1) == 0)
+	if (_strncmp(cmd_path, "./", 2) == 0 || _strncmp(cmd_path, "/", 1) == 0)
 		return (1);
 	while (cmd_path[i])
 	{

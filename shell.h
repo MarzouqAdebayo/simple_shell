@@ -26,6 +26,7 @@ size_t _strlen(const char *str);
 char *_strncpy(char *dest, const char *src, size_t n);
 char *_strtok(char *str, const char *delim);
 int _atoi(char *s);
+int _strncmp(char *s1, char *s2, int n);
 
 /** Memory util functions */
 void free2DArray(char **arr);

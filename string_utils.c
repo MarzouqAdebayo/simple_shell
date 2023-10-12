@@ -67,7 +67,7 @@ char *_strtok(char *str, const char *delim)
 	{
 		if (!copy[i])
 			return (token);
-		if (strncmp(copy + i, delim, delim_len) == 0)
+		if (_strncmp(copy + i, delim, delim_len) == 0)
 		{
 			k = i + delim_len;
 			for (j = i; j < k; j++, i++)
@@ -116,4 +116,29 @@ int _atoi(char *s)
 	}
 
 	return (result * sign);
+}
+
+/**
+ * _strcmp - Compares two strings
+ * @s1: Pointer to string one
+ * @s2: Pointer to string two
+ *
+ * Return: return 0 if same and 1 otherwise
+ */
+
+int _strncmp(char *s1, char *s2, int n)
+{
+	int i;
+
+	i = 0;
+	while (*s1 || i < n)
+	{
+		if (*s1 != *s2)
+		{
+			return *(const unsigned char *)s1 - *(const unsigned char *)s2;
+		}
+		s1++;
+		s2++;
+	}
+	return (0);
 }
