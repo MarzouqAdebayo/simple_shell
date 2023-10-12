@@ -28,6 +28,7 @@ int check_builtin(char *command)
 
 		free(cmd);
 		_exit_(command);
+		return (1);
 	}
 	free(cmd);
 
