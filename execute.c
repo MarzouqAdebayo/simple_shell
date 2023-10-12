@@ -42,6 +42,7 @@ void _execute(char **args)
 		perror("No argument passed");
 		return;
 	}
+	printf("Line 45. %s\n", args[0]);
 
 	if (use_path(args[0]))
 	{
