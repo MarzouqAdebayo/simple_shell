@@ -30,8 +30,8 @@ void _exit_(char *str)
 	int status = 0;
 	char *token;
 
-	_strtok(str, " ");
-	token = _strtok(NULL, " ");
+	strtok(str, " ");
+	token = strtok(NULL, " ");
 	if (token)
 	{
 		status = _atoi(token);
