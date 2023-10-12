@@ -70,7 +70,7 @@ void _execute(char **args)
 			return;
 		}
 		path = path_with_current(raw_path);
-		token = _strtok(path, ":");
+		token = _strtok(strdup(path), ":");
 		while (token)
 		{
 			printf("%s\n", token);
