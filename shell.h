@@ -40,7 +40,7 @@ char *path_with_current(char *path);
 int use_path(char *cmd_path);
 
 /** Read utils */
-ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
+ssize_t _getline(char **lineptr, size_t *n, int fd);
 
 /**  */
 int build_path(char **new_str, char *path, char *name);
