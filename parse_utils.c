@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void dummy(void);
+void dummy2(void);
 
 /**
  * iswhitespace - Checks if a character is a whitespace character.
@@ -152,6 +152,6 @@ char **split_str(char *src, const char delimiter)
  *
  * Return: has no return value
 */
-void dummy(void)
+void dummy2(void)
 {
 }

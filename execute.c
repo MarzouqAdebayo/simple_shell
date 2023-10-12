@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void dummy(void);
+void dummy1(void);
 
 /**
  * _execute - Execute a command specified in the args array.
@@ -87,6 +87,6 @@ void _execute(char **args)
  *
  * Return: has no return value
  */
-void dummy(void)
+void dummy1(void)
 {
 }
