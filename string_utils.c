@@ -126,7 +126,7 @@ int _atoi(char *s)
  * Return: return 0 if same and 1 otherwise
  */
 
-int _strncmp(char *s1, char *s2, int n)
+int _strncmp(const char *s1, const char *s2, int n)
 {
 	int i;
 
