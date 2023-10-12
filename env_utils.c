@@ -58,7 +58,14 @@ int *_setenv(void)
 }
 
 /**
+ * path_with_current - Set current path to path
+ * @path: string containing env var PATH
  *
+ * Return: new edited path string
+ *
+ * This function edits path by adding a '.' when it finds a trailing colon,
+ * leading colon or a double colon in the path string
+ * It return a new string or NULL if an error occurs
  */
 
 char *path_with_current(char *path)
@@ -122,7 +129,10 @@ char *path_with_current(char *path)
 }
 
 /**
+ * use_path - Checks if a path should use the env var PATH
+ * @cmd_path: String containing the command passed to the shell
  *
+ * Return: 1 if it is a rel or abs path and 0 if it is neither
  */
 
 int use_path(char *cmd_path)

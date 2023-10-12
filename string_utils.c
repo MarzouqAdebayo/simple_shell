@@ -41,16 +41,20 @@ char *_strncpy(char *dest, const char *src, size_t n)
  * @delim: A null-terminated string containing delimiter characters.
  *
  * Description:
- * This function splits the input string into a sequence of tokens using the specified delimiters.
+ * This function splits the input string into a sequence of tokens using the
+ * specified delimiters.
  *
  * Return:
  * - On the first call, it returns a pointer to the first token found in 'str'.
- * - On subsequent calls with 'NULL' as the first argument, it continues tokenization.
+ * - On subsequent calls with 'NULL' as the first argument, it continues
+ * tokenization.
  * - If no more tokens are found, it returns 'NULL'.
  *
  * Notes:
- * - The function modifies the original 'str' by replacing delimiters with null characters.
- * - The internal state is maintained between calls using a static variable and is not thread-safe.
+ * - The function modifies the original 'str' by replacing delimiters with null
+ *  characters.
+ * - The internal state is maintained between calls using a static variable and
+ *  is not thread-safe.
  */
 
 char *_strtok(char *str, const char *delim)

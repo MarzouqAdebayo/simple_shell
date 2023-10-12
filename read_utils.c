@@ -1,18 +1,22 @@
 #include "shell.h"
 
 /**
- * custom_getline - Read lines from a file descriptor, dynamically resizing the buffer.
+ * custom_getline - Read lines from a file descriptor, dynamically resizing the
+ * buffer.
  * @lineptr: A pointer to a pointer to the dynamically allocated line buffer.
  * @n: A pointer to the size of the allocated buffer.
  * @stream: The stream to read from
  *
  * Description:
- * This function reads lines from the given file descriptor 'fd' and stores them in a dynamically
- * allocated buffer. It automatically resizes the buffer to accommodate lines of varying lengths.
+ * This function reads lines from the given file descriptor 'fd' and stores
+ * them in a dynamically allocated buffer. It automatically resizes the buffer
+ * to accommodate lines of varying lengths.
  *
  * Return:
- * On success, returns the number of characters read, including the newline character ('\n').
- * On error, returns -1. Possible errors include memory allocation failures, read errors, and reaching the end of the file with no data read.
+ * On success, returns the number of characters read, including the newline
+ * character ('\n').
+ * On error, returns -1. Possible errors include memory allocation failures,
+ * read errors, and reaching the end of the file with no data read.
  */
 
 ssize_t _getline(char **lineptr, size_t *n, int fd)
