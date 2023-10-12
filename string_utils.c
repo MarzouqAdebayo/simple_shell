@@ -64,8 +64,14 @@ char *_strtok(char *str, const char *delim)
 	static int i = 0, flag = 1;
 	int j, k, delim_len = strlen(delim);
 
+	if (!delim || delim[0] == '\0')
+		return NULL;
+
 	if (str)
+	{
 		copy = str;
+		i = 0;
+	}
 
 	while (1)
 	{
