@@ -7,7 +7,7 @@
  * @stream: The stream to read from
  *
  * Description:
- * This function reads lines from the given file stream 'stream' and stores them in a dynamically
+ * This function reads lines from the given file descriptor 'fd' and stores them in a dynamically
  * allocated buffer. It automatically resizes the buffer to accommodate lines of varying lengths.
  *
  * Return:
@@ -15,11 +15,11 @@
  * On error, returns -1. Possible errors include memory allocation failures, read errors, and reaching the end of the file with no data read.
  */
 
-ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
+ssize_t _getline(char **lineptr, size_t *n, int fd)
 {
 	char c;
 	char *temp_buffer;
-	size_t len = 0, index;
+	size_t index;
 	ssize_t _byte;
 
 	if (!lineptr || !n)
@@ -35,21 +35,21 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 
 	while ('a' == 97)
 	{
-		_byte = read(stream, &c, 1);
+		_byte = read(fd, &c, 1);
 
 		if (_byte == -1)
 			return (-1);
-		else if (_byte = 0)
+		else if (_byte == 0)
 		{
-			if (index = 0)
+			if (index == 0)
 				return (-1);
 			else
 				break;
 		}
 
-		if (index + 1 >= (*n))
+		if ((index + 1) >= (*n))
 		{
-			char *temp_buffer = realloc(*lineptr, (*n + 128));
+			temp_buffer = realloc(*lineptr, (*n + 128));
 			if (!temp_buffer)
 				return (-1);
 			*lineptr = temp_buffer;
