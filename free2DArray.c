@@ -19,10 +19,6 @@
  * Return: None.
  */
 
-/**
- *
-*/
-
 void free2DArray(char **arr)
 {
 	int i;

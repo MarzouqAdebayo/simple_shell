@@ -6,7 +6,7 @@
  * Return: has no return value
  */
 
-void print_env()
+void print_env(void)
 {
 	int i;
 
@@ -19,8 +19,12 @@ void print_env()
 }
 
 /**
+ * _exit_ - Exits the process and terminates shell
+ * @str: Command argument
  *
+ * Return: has not return value
  */
+
 void _exit_(char *str)
 {
 	int status = 0;

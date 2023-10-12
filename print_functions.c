@@ -82,6 +82,7 @@ void print_number(int n)
  * @msg: Error message
  * @code: Error code to be printed
  *
+ * Description: Prints customised error message
  * Return: has no return value
  */
 
