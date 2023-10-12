@@ -10,6 +10,7 @@
 
 extern char **environ;
 extern char shell_name[30];
+extern int line_no = 0;
 
 void prompt(char *sym);
 char *_read_fn(void);
@@ -34,7 +35,7 @@ int _putchar(char c);
 void _puts(char *str);
 void print_positive_number(int n);
 void print_number(int n);
-void print_error(int line_no, char *cmd, char *msg, int *code);
+void print_error(char *cmd, char *msg, int *code);
 
 /** Env utils */
 char *_getenv(const char *name);
