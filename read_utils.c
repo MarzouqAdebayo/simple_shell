@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void dummy(void);
+void dummy3(void);
 
 /**
  * _getline - Read lines from a file descriptor, dynamically resizing the
@@ -78,6 +78,6 @@ ssize_t _getline(char **lineptr, size_t *n, int fd)
  *
  * Return: has no return value
  */
-void dummy(void)
+void dummy3(void)
 {
 }
