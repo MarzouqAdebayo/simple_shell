@@ -19,8 +19,9 @@ char *_read_fn(void)
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t bytes_read = 0;
+	int fd = 0;
 
-	bytes_read = _getline(&line, &len, 0);
+	bytes_read = _getline(&line, &len, fd);
 	if (bytes_read == -1)
 	{
 		free(line);
