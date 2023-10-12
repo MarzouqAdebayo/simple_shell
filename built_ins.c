@@ -29,7 +29,7 @@ void _exit_(char *str)
 	_strtok(str, " ");
 	token = _strtok(NULL, " ");
 	if (token)
-		status = atoi(token);
+		status = _atoi(token);
 	free(str);
 	exit(status);
 }

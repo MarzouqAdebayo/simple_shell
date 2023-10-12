@@ -24,6 +24,8 @@ char **split_str(char *src, const char delimiter);
 size_t _strlen(const char *str);
 char *_strncpy(char *dest, const char *src, size_t n);
 char *_strtok(char *str, const char *delim);
+int _atoi(char *s);
+
 /** Memory util functions */
 void free2DArray(char **arr);
 
