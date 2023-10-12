@@ -10,7 +10,7 @@
 
 extern char **environ;
 extern char shell_name[30];
-extern int line_no = 0;
+extern int line_no;
 
 void prompt(char *sym);
 char *_read_fn(void);
