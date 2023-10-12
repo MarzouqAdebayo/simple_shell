@@ -47,7 +47,10 @@ void _execute(char **args)
 	for (i = 0; args[0][i]; i++)
 	{
 		if (args[0][i] == ' ' || args[0][i] == '\n' || args[0][i] == '\t' || args[0][i] == '\r')
-			putchar(args[0][i])
+			putchar('-');
+		else
+			putchar(args[0][i]);
+
 	}
 	printf("\n");
 
