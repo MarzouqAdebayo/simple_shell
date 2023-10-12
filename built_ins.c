@@ -34,7 +34,6 @@ void _exit_(char *str)
 		if (status < 0)
 		{
 			print_error(1, "exit", "Illegal number", &status);
-			free(str);
 			return;
 		}
 	}

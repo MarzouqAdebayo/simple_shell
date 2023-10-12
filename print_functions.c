@@ -71,7 +71,6 @@ void print_number(int n)
 	if (n < 0)
 	{
 		n = n * -1;
-		printf("%d\n", n);
 		_putchar('-');
 	}
 	print_positive_number(n);
