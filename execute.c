@@ -36,22 +36,12 @@ void _execute(char **args)
 {
 	char *raw_path, *path, *token, *full_path = NULL;
 	struct stat info;
-	int i;
 
 	if (!args || !args[0])
 	{
 		perror("No argument passed");
 		return;
 	}
-	printf("Line 45. ");
-	for (i = 0; args[0][i]; i++)
-	{
-		if (args[0][i] == ' ' || args[0][i] == '\n' || args[0][i] == '\t' || args[0][i] == '\r')
-			putchar('-');
-		else
-			putchar(args[0][i]);
-	}
-	printf("\n");
 
 	if (use_path(args[0]))
 	{
@@ -73,7 +63,6 @@ void _execute(char **args)
 		token = _strtok(path, ":");
 		while (token)
 		{
-			printf("%s\n", token);
 			if (build_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
 			{
 				if (run_command(full_path, args, environ) == 0)
