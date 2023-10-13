@@ -63,7 +63,7 @@ void _execute(char **args)
 		token = _strtok(path, ":");
 		while (token)
 		{
-			if (build_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
+			if (join_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
 			{
 				if (run_command(full_path, args, environ) == 0)
 				{
