@@ -31,7 +31,7 @@ char *_getenv(const char *name)
 		{
 			/** compare env variable to name */
 			/** remember to free temp to prevent memory leaks */
-			temp = strdup(environ[i] + len + 1);
+			temp = _strdup(environ[i] + len + 1);
 			return (temp);
 		}
 	}

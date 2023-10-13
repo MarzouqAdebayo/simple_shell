@@ -35,6 +35,7 @@ char *_strncpy(char *dest, const char *src, size_t n);
 char *_strtok(char *str, const char *delim);
 int _atoi(char *s);
 int _strncmp(const char *s1, const char *s2, size_t n);
+char *_strdup(const char *s);
 
 /** Memory util functions */
 void free2DArray(char **arr);

@@ -122,7 +122,7 @@ char *path_with_current(char *path)
 			keep[j] = '\0';
 	}
 	else
-		keep = strdup(path);
+		keep = _strdup(path);
 	free(path);
 	return (keep);
 }
