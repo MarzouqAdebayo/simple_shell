@@ -27,7 +27,7 @@ char **_parse(char *str)
 	}
 	else
 	{
-		/** Handle error appropriately here */
+		/** Handle error */
 		perror("Could not parse string");
 		exit(EXIT_FAILURE);
 	}
