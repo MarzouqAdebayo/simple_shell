@@ -22,10 +22,10 @@ char *_strdup(const char *s)
 
 	while (*(s + i))
 	{
-		dup[i] = s[i];
+		*(dup + i) = s[i];
 		i++;
 	}
-	*(s + i) = '\0';
+	*(dup + i) = '\0';
 
 	return (dup);
 }
