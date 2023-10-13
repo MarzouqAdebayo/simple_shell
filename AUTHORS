@@ -1,3 +1,5 @@
 # Authors and Contributors to this repository:
 
 Marzouq Adebayo <marzouqaadebayo@gmail.com>
+
+git filter-branch -f --env-filter "GIT_AUTHOR_NAME='MarzouqAdebayo'; GIT_AUTHOR_EMAIL='marzouqaadebayo@gmail.com'; GIT_COMMITTER_NAME='MarzouqAdebayo'; GIT_COMMITTER_EMAIL='marzouqaadebayo@gmail.com';" HEAD
