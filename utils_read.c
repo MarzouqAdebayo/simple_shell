@@ -25,7 +25,7 @@ ssize_t _getline(char **lineptr, size_t *n, int fd)
 {
 	char c;
 	static char *temp_buffer;
-	size_t index = 0, old_size = *n;
+	size_t index = 0;
 	ssize_t _byte;
 
 	if (!lineptr || !n)
@@ -40,7 +40,6 @@ ssize_t _getline(char **lineptr, size_t *n, int fd)
 			*n = 0;
 			return (-1);
 		}
-		old_size = *n;
 	}
 
 	while ('a' == 97)
@@ -58,12 +57,11 @@ ssize_t _getline(char **lineptr, size_t *n, int fd)
 
 		if ((index + 1) >= (*n))
 		{
-			temp_buffer = _realloc(*lineptr, old_size, (*n + 128));
+			temp_buffer = _realloc(*lineptr, *n, (*n + 128));
 			if (!temp_buffer)
 				return (-1);
 			*lineptr = temp_buffer;
 			*n += 128;
-			old_size = *n;
 		}
 
 		(*lineptr)[index] = c;
