@@ -39,6 +39,7 @@ char *_strdup(const char *s);
 
 /** Memory util functions */
 void free2DArray(char **arr);
+void *_realloc(void *ptr, size_t old_size, size_t new_size);
 
 /** Print util functions */
 int _putchar(char c);

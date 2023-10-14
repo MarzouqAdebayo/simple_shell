@@ -39,3 +39,49 @@ void free2DArray(char **arr)
 	}
 	free(arr);
 }
+
+/**
+ * realloc - Reallocate memory for a previously allocated block.
+ *
+ * @ptr: A pointer to the previously allocated memory block.
+ * @old_size: The old size (in bytes) for the memory block.
+ * @new_size: The new size (in bytes) for the memory block.
+ *
+ * Return: If successful, a pointer to the newly allocated memory block; NULL 
+ * on failure.
+ */
+
+void *_realloc(void *ptr, size_t old_size, size_t new_size)
+{
+	char *new = NULL;
+	size_t i, max = new_size;
+
+	if (!ptr && !new_size)
+		return (NULL);
+	if (!ptr && new_size)
+	{
+		new = malloc(new_size);
+		if (!new)
+			return (NULL);
+		return (new);
+	}
+	if (ptr && !new_size)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	if (old_size == new_size)
+		return (ptr);
+	new = malloc(new_size);
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (*(ptr + i))
+	{
+		*(new + i) = *(ptr + i);
+		i++;
+	}
+	free(ptr);
+
+	return (new);
+}
