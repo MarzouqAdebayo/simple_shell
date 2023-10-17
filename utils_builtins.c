@@ -44,25 +44,3 @@ void _exit_(char *str)
 	free(str);
 	exit(status);
 }
-
-/**
- *
-*/
-
-int _cd(char *path)
-{
-	/** return NULL if not path */
-	/** check path if it is absolute or relative */
-	/** check if  */
-	/**  */
-	/**  */
-	/**  */
-	/**  */
-	return (0);
-}
-
-/**
- *
-*/
-
-

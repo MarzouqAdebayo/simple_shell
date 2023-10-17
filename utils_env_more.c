@@ -7,7 +7,7 @@
 char **dup_2D_array(char **src)
 {
 	char **copy = NULL;
-	int prev_size = 0, new_size, i, j, len = 0;
+	int prev_size = 0, i, j, len = 0;
 
 	for (prev_size = 0; src[prev_size]; prev_size++)
 		;
@@ -21,7 +21,7 @@ char **dup_2D_array(char **src)
 		copy[i] = malloc(sizeof(char) * (len + 1));
 		if (!(copy[i]))
 		{
-			for (i; i >= 0; i--)
+			for (; i >= 0; i--)
 				free(copy[i]);
 			free(copy);
 			return (0);

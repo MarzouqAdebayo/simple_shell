@@ -9,7 +9,7 @@
 
 int check_builtin(char *command)
 {
-	char *cmd;
+	char *cmd, **cmd_args;
 
 	if (!command)
 		return (-1);
@@ -35,7 +35,7 @@ int check_builtin(char *command)
 		cmd_args = split_str(cmd, ' ');
 		if (cmd)
 		{
-			if (_setenv(cmd[1], cmd[2]) == 0)
+			if (_setenv(cmd_args[1], cmd_args[2]) == 0)
 			{
 				free(cmd);
 				free2DArray(cmd);
@@ -51,10 +51,10 @@ int check_builtin(char *command)
 		if (cmd)
 		{
 			cmd_args = split_str(cmd, ' ');
-			if (_unsetenv(cmd[1]) == 0)
+			if (_unsetenv(cmd_args[1]) == 0)
 			{
 				free(cmd);
-				free2DArray(cmd);
+				free2DArray(cmd_args);
 				return (1);
 			}
 			else

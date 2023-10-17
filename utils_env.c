@@ -52,9 +52,9 @@ char *_getenv(const char *name)
  * implement actual environment variable modification in this example.
  */
 
-int *_setenv(char *var, char *value)
+int _setenv(char *name, char *value)
 {
-	int i = 0, j, len, exists = -1, env_len;
+	int i = 0, len, exists = -1, env_len;
 	char *temp, **env_copy;
 
 	if (!name || !value)
@@ -99,7 +99,7 @@ int *_setenv(char *var, char *value)
  *
  */
 
-int *_unsetenv(char *name)
+int _unsetenv(char *name)
 {
 	int exists = -1, env_len, name_len, var_len, i = 0, j = 0, k = 0;
 	char **env_copy;
