@@ -65,7 +65,7 @@ char *_strtok(char *str, const char *delim)
 	int j, k, delim_len = strlen(delim);
 
 	if (!delim || delim[0] == '\0')
-		return NULL;
+		return (NULL);
 
 	if (str)
 	{

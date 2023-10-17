@@ -3,9 +3,10 @@
 /**
  * _strdup - Duplicate a string.
  *
- * @str: The string to duplicate.
+ * @s: The string to duplicate.
  *
- * Return: A pointer to the newly allocated duplicate string, or NULL if memory allocation fails.
+ * Return: A pointer to the newly allocated duplicate string, or NULL if memory
+ * allocation fails.
  */
 
 char *_strdup(const char *s)

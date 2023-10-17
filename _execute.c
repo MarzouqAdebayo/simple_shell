@@ -63,7 +63,8 @@ void _execute(char **args)
 		token = _strtok(path, ":");
 		while (token)
 		{
-			if (join_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
+			if (join_path(&full_path, token, args[0]) == 0 && stat(full_path, \
+			&info) == 0 && access(full_path, X_OK) == 0)
 			{
 				if (run_command(full_path, args, environ) == 0)
 				{
@@ -82,10 +83,11 @@ void _execute(char **args)
 }
 
 /**
- * dummy - To trick betty
+ * dummy1 - To trick betty
  *
  * Return: has no return value
  */
+
 void dummy1(void)
 {
 }

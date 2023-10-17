@@ -79,10 +79,11 @@ ssize_t _getline(char **lineptr, size_t *n, int fd)
 }
 
 /**
- * dummy - To trick betty
+ * dummy3 - To trick betty
  *
  * Return: has no return value
  */
+
 void dummy3(void)
 {
 }
