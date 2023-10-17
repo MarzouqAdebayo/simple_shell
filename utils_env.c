@@ -55,7 +55,7 @@ char *_getenv(const char *name)
 int _setenv(char *name, char *value)
 {
 	int i = 0, len, exists = -1, env_len;
-	char *temp, **env_copy;
+	char *temp;
 
 	if (!name || !value)
 		return (-1);
@@ -70,25 +70,21 @@ int _setenv(char *name, char *value)
 			break;
 		}
 	}
-	env_copy = dup_2D_array(environ);
 	if (exists != -1)
 	{
 		temp = join_env_var(name, "=", value);
-		free(env_copy[exists]);
-		env_copy[exists] = temp;
-		free2DArray(environ);
-		environ = env_copy;
+		free(environ[exists]);
+		environ[exists] = temp;
 		return (0);
 	}
 	else
 	{
-		env_copy = _realloc(env_copy, sizeof(char *) * (env_len + 1), sizeof(char *) * (env_len + 2));
-		if (!env_copy)
+		environ = _realloc(environ, sizeof(char *) * (env_len + 1), sizeof(char *) * (env_len + 2));
+		if (!environ)
 			return (-1);
 		temp = join_env_var(name, "=", value);
-		env_copy[env_len] = temp;
-		env_copy[env_len + 1] = NULL;
-		environ = env_copy;
+		environ[env_len] = temp;
+		environ[env_len + 1] = NULL;
 		return (0);
 	}
 
