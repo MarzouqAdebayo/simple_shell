@@ -75,12 +75,6 @@ void *_realloc(void *ptr, size_t old_size, size_t new_size)
 	new = malloc(new_size);
 	if (!new)
 		return (NULL);
-	i = 0;
-	while (*(ptr + i))
-	{
-		*(new + i) = *(ptr + i);
-		i++;
-	}
 	for (i = 0; i < max; i++)
 		*(new + i) = *(cast_ptr + i);
 	free(ptr);
