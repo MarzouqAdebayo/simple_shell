@@ -9,9 +9,14 @@
 #include <sys/wait.h>
 
 extern char **environ;
-extern char shell_name[30];
-extern int line_no;
 
+/** getters and setters */
+char *get_shell_name(void);
+void set_shell_name(char *shell_name);
+int get_line_no(void);
+int set_line_no(void);
+
+/** Main shell functions */
 char *_read_fn(void);
 char **_parse(char *str);
 void _execute(char **args);

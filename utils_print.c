@@ -92,9 +92,9 @@ void print_error(char *cmd, char *msg, int *code)
 	{
 		msg = " not found";
 	}
-	_puts(shell_name);
+	_puts(get_shell_name());
 	_puts(": ");
-	print_number(line_no);
+	print_number(get_line_no());
 	_puts(": ");
 	_puts(cmd);
 	_puts(": ");

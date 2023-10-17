@@ -27,6 +27,6 @@ char *_read_fn(void)
 		free(line);
 		exit(1);
 	}
-	line_no += 1;
+	set_line_no();
 	return (line);
 }
