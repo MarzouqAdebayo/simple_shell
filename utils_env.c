@@ -145,7 +145,7 @@ int _unsetenv(char *name)
 			j++;
 		}
 		env_copy[env_len - 1] = NULL;
-		free(environ);
+		free2DArray(environ);
 		environ = env_copy;
 	}
 	else
