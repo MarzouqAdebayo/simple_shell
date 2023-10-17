@@ -41,20 +41,20 @@ void free2DArray(char **arr)
 }
 
 /**
- * realloc - Reallocate memory for a previously allocated block.
+ * _realloc - Reallocate memory for a previously allocated block.
  *
  * @ptr: A pointer to the previously allocated memory block.
  * @old_size: The old size (in bytes) for the memory block.
  * @new_size: The new size (in bytes) for the memory block.
  *
- * Return: If successful, a pointer to the newly allocated memory block; NULL 
- * on failure.
+ * Return: If successful, a pointer to the newly allocated memory block
+ * NULL on failure.
  */
 
 void *_realloc(void *ptr, size_t old_size, size_t new_size)
 {
-	char *new = NULL;
-	size_t i, max = new_size;
+	char *new = NULL, *cast_ptr = ptr;
+	size_t i, max = new_size > old_size ? old_size : new_size;
 
 	if (!ptr && !new_size)
 		return (NULL);
@@ -81,6 +81,8 @@ void *_realloc(void *ptr, size_t old_size, size_t new_size)
 		*(new + i) = *(ptr + i);
 		i++;
 	}
+	for (i = 0; i < max; i++)
+		*(new + i) = *(cast_ptr + i);
 	free(ptr);
 
 	return (new);

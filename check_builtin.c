@@ -9,7 +9,7 @@
 
 int check_builtin(char *command)
 {
-	char *cmd, **cmd_args;
+	char *cmd;
 
 	if (!command)
 		return (-1);
