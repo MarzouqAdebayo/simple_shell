@@ -38,7 +38,7 @@ int check_builtin(char *command)
 			if (_setenv(cmd_args[1], cmd_args[2]) == 0)
 			{
 				free(cmd);
-				free2DArray(cmd);
+				free2DArray(cmd_args);
 				return (1);
 			}
 			else
