@@ -50,8 +50,6 @@ void print_error(char *cmd, char *msg, int *code);
 
 /** Environment util functions */
 char *_getenv(const char *name);
-int _setenv(char *name, char *value);
-int _unsetenv(char *name);
 char **dup_2D_array(char **src);
 char *join_env_var(char *str1, char *str2, char *str3);
 

@@ -30,38 +30,6 @@ int check_builtin(char *command)
 		return (1);
 	}
 
-	if (_strncmp(cmd, "setenv", 6) == 0)
-	{
-		cmd_args = split_str(cmd, ' ');
-		if (cmd)
-		{
-			if (_setenv(cmd_args[1], cmd_args[2]) == 0)
-			{
-				free(cmd);
-				free2DArray(cmd_args);
-				return (1);
-			}
-			else
-				perror("Usage: setenv <name> <value>\n");
-		}
-	}
-
-	if (_strncmp(cmd, "unsetenv", 8) == 0)
-	{
-		if (cmd)
-		{
-			cmd_args = split_str(cmd, ' ');
-			if (_unsetenv(cmd_args[1]) == 0)
-			{
-				free(cmd);
-				free2DArray(cmd_args);
-				return (1);
-			}
-			else
-				perror("Environment variable not found");
-		}
-	}
-
 	free(cmd);
 
 	return (0);
