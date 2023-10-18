@@ -3,7 +3,7 @@
 /**
  * dup_2D_array - Creates a duplicate of a 2D array.
  *
- * src: The source 2D array to duplicate.
+ * @src: The source 2D array to duplicate.
  *
  * Return: A newly allocated copy of the source 2D array.
  * The caller is responsible for freeing this memory when done.
@@ -46,9 +46,9 @@ char **dup_2D_array(char **src)
 /**
  * join_env_var - Concatenates new env variable.
  *
- * str1: The first string to concatenate.
- * str2: The second string to concatenate.
- * str3: The third string to concatenate.
+ * @str2: The second string to concatenate.
+ * @str1: The first string to concatenate.
+ * @str3: The third string to concatenate.
  *
  * Return: A newly allocated string containing the concatenated result.
  *         The caller is responsible for freeing this memory when done.

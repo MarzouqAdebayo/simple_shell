@@ -147,7 +147,7 @@ char **split_str(char *src, const char delimiter)
 }
 
 /**
- * dummy - To trick betty
+ * dummy2 - To trick betty
  *
  * Return: has no return value
  */
