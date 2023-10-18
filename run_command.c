@@ -42,13 +42,16 @@ int run_command(char *command, char **args, char **env_vars)
 	}
 	if (child_pid == 0)
 	{
-		if (execve(command, args, env_vars) == -1)
-		{
-			perror("execve");
-			exit(EXIT_FAILURE);
-		}
+		execve(command, args, env_vars);
+		perror("execve");
+		exit(EXIT_FAILURE);
 	}
 	else
-		wait(&status);
-	return (EXIT_SUCCESS);
+	{
+		waitpid(child_pid, &status, 0);
+		if (WIFEXITED(status))
+			set_status(WEXITSTATUS(status));
+	}
+
+	return (get_status());
 }

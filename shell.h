@@ -15,6 +15,8 @@ char *get_shell_name(void);
 void set_shell_name(char *shell_name);
 int get_line_no(void);
 void set_line_no(void);
+int get_status(void);
+void set_status(int status);
 
 /** Main shell functions */
 char *_read_fn(void);
@@ -49,8 +51,12 @@ void *_realloc(void *ptr, size_t old_size, size_t new_size);
 /** Print util functions */
 int _putchar(char c);
 void _puts(char *str);
-void print_positive_number(int n);
-void print_number(int n);
+
+/** Error util functions */
+int _putchar_err(char c);
+void _puts_err(char *str);
+void print_positive_number_err(int n);
+void print_number_err(int n);
 void print_error(char *cmd, char *msg, int *code);
 
 /** Environment util functions */

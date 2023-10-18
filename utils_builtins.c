@@ -42,5 +42,5 @@ void _exit_(char *str)
 		}
 	}
 	free(str);
-	exit(status);
+	exit(status ? status : get_status());
 }
