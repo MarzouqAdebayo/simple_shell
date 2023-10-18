@@ -55,24 +55,26 @@ void _execute(char **args)
 	{
 		raw_path = _getenv("PATH");
 		path = path_with_current(raw_path);
-		token = _strtok(path, ":");
-		while (token)
-		{
-			if (join_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
-			{
-				if (run_command(full_path, args, environ) == 0)
-				{
-					free(full_path);
-					free(path);
-					return;
-				}
-			}
-			if (full_path)
-				free(full_path);
-			token = _strtok(NULL, ":");
-		}
 		if (path)
+		{
+			token = _strtok(path, ":");
+			while (token)
+			{
+				if (join_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
+				{
+					if (run_command(full_path, args, environ) == 0)
+					{
+						free(full_path);
+						free(path);
+						return;
+					}
+				}
+				if (full_path)
+					free(full_path);
+				token = _strtok(NULL, ":");
+			}
 			free(path);
+		}
 	}
 	set_status(127);
 	print_error(args[0], "not found", NULL);
