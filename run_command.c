@@ -49,6 +49,6 @@ int run_command(char *command, char **args, char **env_vars)
 		}
 	}
 	else
-		wait(NULL);
+		wait(&status);
 	return (EXIT_SUCCESS);
 }

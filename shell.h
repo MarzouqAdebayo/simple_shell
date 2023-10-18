@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 extern char **environ;
 
@@ -21,6 +22,7 @@ char **_parse(char *str);
 void _execute(char **args);
 int run_command(char *command, char **args, char **env_vars);
 int check_builtin(char *command);
+void sig_handler(__attribute__((unused)) int sigval);
 
 /** Read util functions */
 ssize_t _getline(char **lineptr, size_t *n, int fd);
