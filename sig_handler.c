@@ -7,5 +7,10 @@
 
 void sig_handler(__attribute__((unused)) int sigval)
 {
-	_puts("\n($) ");
+	if (signum == SIGTSTP)
+	{
+		return;
+	}
+	else if (signum == SIGINT)
+		_puts("\n($) ");
 }

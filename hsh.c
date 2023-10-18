@@ -23,7 +23,7 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
 
-	signal(SIGINT, SIG_IGN);
+	signal(SIGTSTP, sig_handler);
 	signal(SIGINT, sig_handler);
 
 	if (argc > 0)
