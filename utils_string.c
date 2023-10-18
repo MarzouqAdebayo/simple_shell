@@ -62,7 +62,7 @@ char *_strtok(char *str, const char *delim)
 	static char *copy;
 	char *token = NULL;
 	static int i = 0, flag = 1;
-	int j, k, delim_len = strlen(delim);
+	int j, k, delim_len = _strlen(delim);
 
 	if (!delim || delim[0] == '\0')
 		return (NULL);

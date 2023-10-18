@@ -59,7 +59,7 @@ char *join_env_var(char *str1, char *str2, char *str3)
 	char *temp;
 	int i, j;
 
-	temp = malloc(sizeof(char) * (strlen(str1) + strlen(str2) + strlen(str3) +
+	temp = malloc(sizeof(char) * (_strlen(str1) + _strlen(str2) + _strlen(str3) +
 	1));
 	if (!temp)
 		return (NULL);
