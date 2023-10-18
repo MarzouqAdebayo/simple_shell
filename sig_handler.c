@@ -12,5 +12,5 @@ void sig_handler(__attribute__((unused)) int sigval)
 		return;
 	}
 	else if (signum == SIGINT)
-		_puts("\n($) ");
+		prompt(NULL);
 }
