@@ -7,11 +7,11 @@
 
 void sig_handler(__attribute__((unused)) int sigval)
 {
-	if (signum == SIGTSTP)
+	if (sigval == SIGTSTP)
 	{
 		return;
 	}
-	else if (signum == SIGINT)
+	else if (sigval == SIGINT)
 		prompt("\n($) ");
 }
 
