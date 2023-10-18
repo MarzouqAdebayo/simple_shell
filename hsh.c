@@ -44,7 +44,7 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 		if (cmd_args)
 		{
 			_execute(cmd_args);
-			free2DArray(cmd_args);
+			free_2d_array(cmd_args);
 		}
 	}
 	return (0);

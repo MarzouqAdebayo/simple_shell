@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * free2DArray - Free memory allocated for a two-dimensional array of strings.
+ * free_2d_array - Free memory allocated for a two-dimensional array of strings.
  * @arr: A pointer to the 2D array of strings.
  *
  * This function deallocates the memory occupied by a two-dimensional array of
@@ -19,7 +19,7 @@
  * Return: None.
  */
 
-void free2DArray(char **arr)
+void free_2d_array(char **arr)
 {
 	int i;
 

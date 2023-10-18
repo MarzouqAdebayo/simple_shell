@@ -42,7 +42,7 @@ int _strncmp(const char *s1, const char *s2, size_t n);
 char *_strdup(const char *s);
 
 /** Memory util functions */
-void free2DArray(char **arr);
+void free_2d_array(char **arr);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
 
 /** Print util functions */
@@ -54,7 +54,7 @@ void print_error(char *cmd, char *msg, int *code);
 
 /** Environment util functions */
 char *_getenv(const char *name);
-char **dup_2D_array(char **src);
+char **dup_2d_array(char **src);
 char *join_env_var(char *str1, char *str2, char *str3);
 
 /** Path util functions */

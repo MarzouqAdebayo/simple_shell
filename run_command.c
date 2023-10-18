@@ -44,11 +44,11 @@ int run_command(char *command, char **args, char **env_vars)
 	{
 		if (execve(command, args, env_vars) == -1)
 		{
-			perror("Error");
+			perror("execve");
 			exit(EXIT_FAILURE);
 		}
 	}
 	else
-		waitpid(child_pid, &status, 0);
-	return (0);
+		wait(NULL);
+	return (EXIT_SUCCESS);
 }

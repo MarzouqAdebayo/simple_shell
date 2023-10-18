@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * dup_2D_array - Creates a duplicate of a 2D array.
+ * dup_2d_array - Creates a duplicate of a 2D array.
  *
  * @src: The source 2D array to duplicate.
  *
@@ -9,7 +9,7 @@
  * The caller is responsible for freeing this memory when done.
  */
 
-char **dup_2D_array(char **src)
+char **dup_2d_array(char **src)
 {
 	char **copy = NULL;
 	int prev_size = 0, i, j, len = 0;
