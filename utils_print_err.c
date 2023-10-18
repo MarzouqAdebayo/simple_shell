@@ -10,7 +10,7 @@
 
 int _putchar_err(char c)
 {
-	return (write(stderr, &c, 1));
+	return (write(2, &c, 1));
 }
 
 /**
@@ -68,7 +68,6 @@ void print_number_err(int n)
 		_putchar_err(48);
 		return;
 	}
-_err
 	if (n < 0)
 	{
 		n = n * -1;

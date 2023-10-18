@@ -10,7 +10,7 @@ static int exit_status;
 
 int get_status(void)
 {
-	return (exit_status)
+	return (exit_status);
 }
 
 /**
