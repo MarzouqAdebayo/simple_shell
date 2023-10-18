@@ -25,7 +25,7 @@ char *_read_fn(void)
 	if (bytes_read == -1)
 	{
 		free(line);
-		exit(1);
+		exit(0);
 	}
 	set_line_no();
 	return (line);
