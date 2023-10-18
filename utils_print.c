@@ -55,6 +55,7 @@ void print_positive_number(int n)
 
 /**
  * print_number - Body of the function
+ *
  * @n: The argument n to be printed
  *
  * Description: Prints numbers using putchar
@@ -78,6 +79,7 @@ void print_number(int n)
 
 /**
  * print_error: prints error message to stdout
+ *
  * @cmd: Command name string
  * @msg: Error message
  * @code: Error code to be printed
