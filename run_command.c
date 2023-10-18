@@ -42,9 +42,11 @@ int run_command(char *command, char **args, char **env_vars)
 	}
 	if (child_pid == 0)
 	{
-		execve(command, args, env_vars);
-		perror("execve");
-		exit(EXIT_FAILURE);
+		if (execve(command, args, env_vars) == -1)
+		{
+			perror("execve");
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{
