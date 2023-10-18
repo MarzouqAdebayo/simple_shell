@@ -41,5 +41,5 @@ int get_line_no(void)
 
 void set_line_no(void)
 {
-	line++;
+	line_no++;
 }

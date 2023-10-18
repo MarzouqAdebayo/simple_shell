@@ -14,7 +14,7 @@ extern char **environ;
 char *get_shell_name(void);
 void set_shell_name(char *shell_name);
 int get_line_no(void);
-int set_line_no(void);
+void set_line_no(void);
 
 /** Main shell functions */
 char *_read_fn(void);
