@@ -23,10 +23,12 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	char *line, **cmd_args;
 
+	signal(SIGINT, SIG_IGN);
+	signal(SIGINT, sig_handler);
+
 	if (argc > 0)
 		set_shell_name(argv[0]);
 
-	signal(SIGINT, sig_handler);
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
