@@ -25,11 +25,6 @@ void free_2d_array(char **arr)
 
 	if (!arr)
 		return;
-	if (!arr[0])
-	{
-		free(arr);
-		return;
-	}
 
 	i = 0;
 	while (arr[i])
