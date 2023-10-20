@@ -9,7 +9,9 @@
 
 int check_builtin(char *command)
 {
-	char *cmd;
+	list_t **env_head = get_head();
+	char *cmd, **args, *temp;
+	int i;
 
 	if (!command)
 		return (-1);
@@ -28,6 +30,21 @@ int check_builtin(char *command)
 		free(cmd);
 		free_list();
 		_exit_(command);
+		return (1);
+	}
+
+	if (_strncmp(cmd, "setenv", 6) == 0)
+	{
+		args = split_str(cmd);
+		for (i = 0; args[i]; i++)
+			;
+		if (i == 3)
+			_setenv(args[1], args[2]);
+		return (1);
+	}
+
+	if (_strncmp(cmd, "unsetenv", 8) == 0)
+	{
 		return (1);
 	}
 

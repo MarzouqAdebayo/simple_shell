@@ -32,7 +32,7 @@ list_t *add_node_end(list_t **head, const char *var);
 int print_list(void);
 int list_len(void);
 int delete_node(list_t **head, char *name);
-char *get_node_var(const char *name);
+list_t *get_node(const char *name);
 char **build_env_array();
 
 /** getters and setters */
@@ -68,6 +68,7 @@ char *_strtok(char *str, const char *delim);
 int _atoi(char *s);
 int _strncmp(const char *s1, const char *s2, int n);
 char *_strdup(const char *s);
+char *_strcat(char *dest, char *src);
 
 /** Memory util functions */
 void free_2d_array(char **arr);
@@ -86,6 +87,7 @@ void print_error(char *cmd, char *msg, int *code);
 
 /** Environment util functions */
 char *_getenv(const char *name);
+int _setenv(char *name, char *value);
 char **dup_2d_array(char **src);
 char *join_env_var(char *str1, char *str2, char *str3);
 

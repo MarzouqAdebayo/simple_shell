@@ -79,11 +79,11 @@ int delete_node(list_t **head, char *name)
 }
 
 /**
- * get_node_var - gets the environment variable from linkedlist
- * Return: string to the variable value
+ * get_node - gets the node with variable name from linkedlist
+ * Return: pointer to the env node
  */
 
-char *get_node_var(const char *name)
+list_t *get_node(const char *name)
 {
 	list_t *h = *get_head();
 
@@ -93,7 +93,7 @@ char *get_node_var(const char *name)
 			return (_strdup(h->var));
 		h = h->next;
 	}
-	return (NULL);
+	return (h);
 }
 
 /**

@@ -61,6 +61,7 @@ int print_list(void)
 			;
 		else
 			_puts(h->var);
+		_putchar('\n');
 		h = h->next;
 		size++;
 	}

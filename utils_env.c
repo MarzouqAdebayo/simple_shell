@@ -17,9 +17,56 @@
 char *_getenv(const char *name)
 {
 	char *temp;
+	list_t *node;
 
 	if (name == NULL)
 		return (NULL);
-	temp = get_node_var(name);
+	node = get_node(name);
+	temp = node->var;
 	return (temp);
+}
+
+/**
+ * setenv - Set or update an environment variable.
+ * @name: The name of the environment variable to set.
+ * @value: The value to assign to the environment variable.
+ *
+ * Description:
+ * This function is used to set or update an environment variable specified by
+ * the @name parameter. If the variable already exists its value will be
+ * updated. If the variable doesn't exist, a new environment variable will be
+ * created.
+ *
+ * Return:
+ *  - 0 on success.
+ *  - -1 on failure, with errno set to indicate the error.
+ */
+
+int _setenv(char *name, char *value)
+{
+	char *temp;
+	int len = _strlen(name) + _strlen(value);
+	list_t *new;
+
+	temp = malloc(sizeof(char) * (len + 1));
+	if (!temp)
+		return (NULL);
+	temp = _strcat(temp, name);
+	temp = _strcat(temp, value);
+	temp[len] = '\0';
+	new = get_node(name);
+	if (new)
+	{
+		free(new->var);
+		new->var = temp;
+		return (1);
+	}
+	else
+	{
+		new = add_node_end(env_head, temp);
+		free(temp);
+		if (new)
+			return (1);
+	}
+	return (0)
 }
