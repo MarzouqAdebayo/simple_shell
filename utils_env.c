@@ -49,15 +49,15 @@ int _setenv(char *name, char *value)
 	int len = _strlen(name) + _strlen(value);
 	list_t *new;
 
-	temp = malloc(sizeof(char) * (len + 2));
+	temp = join_env_var(name, "=", value);
 	if (!temp)
 		return (-1);
-	temp = join_env_var(name, "=", value);
 	new = get_node(name);
 	if (new)
 	{
 		free(new->var);
 		new->var = temp;
+		free(temp);
 		return (0);
 	}
 	else
