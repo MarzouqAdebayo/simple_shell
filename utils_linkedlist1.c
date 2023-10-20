@@ -83,7 +83,7 @@ int delete_node(list_t **head, char *name)
  * Return: string to the variable value
  */
 
-char *get_node_var(char *name)
+char *get_node_var(const char *name)
 {
 	list_t **h = get_head();
 

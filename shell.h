@@ -32,7 +32,7 @@ list_t *add_node_end(list_t **head, const char *var);
 int print_list(void);
 int list_len(void);
 int delete_node(list_t **head, char *name);
-char *get_node_var(char *name);
+char *get_node_var(const char *name);
 
 /** getters and setters */
 char *get_shell_name(void);

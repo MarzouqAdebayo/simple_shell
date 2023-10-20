@@ -9,6 +9,7 @@
 void print_env(void)
 {
 	int i;
+	
 	i = print_list();
 }
 
