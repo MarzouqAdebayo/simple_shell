@@ -22,7 +22,7 @@ char *_getenv(const char *name)
 	if (name == NULL)
 		return (NULL);
 	node = get_node(name);
-	temp = node->var;
+	temp = _strdup(node->var);
 	return (temp);
 }
 
