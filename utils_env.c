@@ -29,7 +29,6 @@ char *_getenv(const char *name)
 		token = _strtok(NULL, "=");
 		value = _strdup(token);
 		free(temp);
-		_puts(value);
 		return (value);
 	}
 	return (temp);
