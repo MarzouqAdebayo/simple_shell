@@ -93,7 +93,7 @@ list_t *get_node(const char *name)
 			return (h);
 		h = h->next;
 	}
-	return (h);
+	return (h ? h : NULL);
 }
 
 /**
