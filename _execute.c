@@ -47,7 +47,7 @@ void _execute(char **args)
 	{
 		if (stat(args[0], &info) == 0 && access(args[0], X_OK) == 0)
 		{
-			run_command(args[0], args, environ);
+			run_command(args[0], args);
 			return;
 		}
 	}
@@ -62,7 +62,7 @@ void _execute(char **args)
 			{
 				if (join_path(&full_path, token, args[0]) == 0 && stat(full_path, &info) == 0 && access(full_path, X_OK) == 0)
 				{
-					if (run_command(full_path, args, environ) == 0)
+					if (run_command(full_path, args) == 0)
 					{
 						free(full_path);
 						free(path);

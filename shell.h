@@ -10,6 +10,30 @@
 
 extern char **environ;
 
+/**
+ * struct list_s - singly linked list to hold environment variables
+ * @var: environment variable string
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ */
+typedef struct list_s
+{
+	char *var;
+	struct list_s *next;
+} list_t;
+
+/** linked_list utils */
+void initialize_env(void);
+list_t get_head(void);
+void free_list(void);
+list_t *add_node(list_t **head, const char *var);
+list_t *add_node_end(list_t **head, const char *var);
+size_t print_list(convoid);
+size_t list_len(void);
+int delete_node(list_t **head, char *name);
+char *get_node_var(char *name);
+
 /** getters and setters */
 char *get_shell_name(void);
 void set_shell_name(char *shell_name);

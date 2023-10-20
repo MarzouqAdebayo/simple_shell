@@ -9,13 +9,7 @@
 void print_env(void)
 {
 	int i;
-
-	/** Iterate through `environ` to print all environment variables */
-	for (i = 0; environ[i]; i++)
-	{
-		_puts(environ[i]);
-		_putchar('\n');
-	}
+	i = print_list();
 }
 
 /**
@@ -42,5 +36,6 @@ void _exit_(char *str)
 		}
 	}
 	free(str);
+	free_list();
 	exit(status ? status : get_status());
 }

@@ -45,6 +45,7 @@ int run_command(char *command, char **args, char **env_vars)
 		if (execve(command, args, env_vars) == -1)
 		{
 			perror("execve");
+			free_list();
 			exit(EXIT_FAILURE);
 		}
 	}

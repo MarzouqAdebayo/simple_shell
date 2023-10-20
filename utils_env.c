@@ -16,24 +16,10 @@
 
 char *_getenv(const char *name)
 {
-	int i;
 	char *temp;
-	size_t len;
 
 	if (name == NULL)
 		return (NULL);
-
-	len = _strlen(name);
-	/** Iterate through `environ` to print all environment variables */
-	for (i = 0; environ[i]; i++)
-	{
-		if (_strncmp(environ[i], name, len) == 0 && environ[i][len] == '=')
-		{
-			/** compare env variable to name */
-			/** remember to free temp to prevent memory leaks */
-			temp = _strdup(environ[i] + len + 1);
-			return (temp);
-		}
-	}
-	return (NULL);
+	temp = get_node_var(name);
+	return (temp);
 }

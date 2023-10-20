@@ -41,6 +41,8 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 	signal(SIGTSTP, sig_handler);
 	signal(SIGINT, sig_handler);
 
+	initialize_env();
+
 	if (argc > 0)
 		set_shell_name(argv[0]);
 

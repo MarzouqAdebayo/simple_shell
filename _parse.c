@@ -29,6 +29,7 @@ char **_parse(char *str)
 	{
 		/** Handle error */
 		perror("Could not parse string");
+		free_list();
 		exit(EXIT_FAILURE);
 	}
 	return (cmd_args);
