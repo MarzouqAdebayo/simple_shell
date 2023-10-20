@@ -56,7 +56,6 @@ int _setenv(char *name, char *value)
 	{
 		free(new->var);
 		new->var = temp;
-		free(temp);
 		return (0);
 	}
 	else
