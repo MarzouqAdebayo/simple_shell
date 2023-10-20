@@ -29,7 +29,7 @@ list_t get_head(void);
 void free_list(void);
 list_t *add_node(list_t **head, const char *var);
 list_t *add_node_end(list_t **head, const char *var);
-int print_list(convoid);
+int print_list(void);
 int list_len(void);
 int delete_node(list_t **head, char *name);
 char *get_node_var(char *name);
@@ -46,7 +46,7 @@ void set_status(int status);
 char *_read_fn(void);
 char **_parse(char *str);
 void _execute(char **args);
-int run_command(char *command, char **args, char **env_vars);
+int run_command(char *command, char **args);
 int check_builtin(char *command);
 
 /** Read util functions */
