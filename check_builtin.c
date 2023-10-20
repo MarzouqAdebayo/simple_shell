@@ -9,8 +9,7 @@
 
 int check_builtin(char *command)
 {
-	list_t **env_head = get_head();
-	char *cmd, **args, *temp;
+	char *cmd, **args;
 	int i;
 
 	if (!command)
@@ -35,7 +34,7 @@ int check_builtin(char *command)
 
 	if (_strncmp(cmd, "setenv", 6) == 0)
 	{
-		args = split_str(cmd);
+		args = split_str(cmd, ' ');
 		for (i = 0; args[i]; i++)
 			;
 		if (i == 3)

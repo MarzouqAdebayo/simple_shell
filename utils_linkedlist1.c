@@ -90,7 +90,7 @@ list_t *get_node(const char *name)
 	while (h)
 	{
 		if (_strncmp(h->var, name, _strlen(name)) == 0)
-			return (_strdup(h->var));
+			return (h);
 		h = h->next;
 	}
 	return (h);

@@ -44,13 +44,14 @@ char *_getenv(const char *name)
 
 int _setenv(char *name, char *value)
 {
+	list_t **env_head = get_head();
 	char *temp;
 	int len = _strlen(name) + _strlen(value);
 	list_t *new;
 
 	temp = malloc(sizeof(char) * (len + 1));
 	if (!temp)
-		return (NULL);
+		return (-1);
 	temp = _strcat(temp, name);
 	temp = _strcat(temp, value);
 	temp[len] = '\0';
@@ -59,14 +60,14 @@ int _setenv(char *name, char *value)
 	{
 		free(new->var);
 		new->var = temp;
-		return (1);
+		return (0);
 	}
 	else
 	{
 		new = add_node_end(env_head, temp);
 		free(temp);
 		if (new)
-			return (1);
+			return (0);
 	}
-	return (0)
+	return (-1);
 }
