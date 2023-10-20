@@ -26,6 +26,7 @@ char **dup_2d_array(char **src)
 		copy[i] = malloc(sizeof(char) * (len + 1));
 		if (!(copy[i]))
 		{
+			i--;
 			for (; i >= 0; i--)
 				free(copy[i]);
 			free(copy);

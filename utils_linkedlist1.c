@@ -85,13 +85,49 @@ int delete_node(list_t **head, char *name)
 
 char *get_node_var(const char *name)
 {
-	list_t **h = get_head();
+	list_t *h = *get_head();
 
-	while (*h)
+	while (h)
 	{
-		if (_strncmp((*h)->var, name, _strlen(name)) == 0)
-			return (_strdup((*h)->var));
-		*h = (*h)->next;
+		if (_strncmp(h->var, name, _strlen(name)) == 0)
+			return (_strdup(h->var));
+		h = h->next;
 	}
 	return (NULL);
+}
+
+/**
+ * copy_to_2d_array - converts a linked list to array of strings
+ * Return: pointer to the array of strings
+*/
+
+char **build_env_array()
+{
+	list_t *h = *get_head();
+	char **new, *temp;
+	int len = 0, var_len = 0, i = 0, j;
+
+	len = list_len();
+	new = malloc(sizeof(char *) * (len + 1));
+	if (!new)
+		return (NULL);
+
+	while (h)
+	{
+		var_len = _strlen(h->var);
+		new[i] = _strdup(h->var);
+		if (!new[i])
+		{
+			i--;
+			for (i; i >= 0; i--)
+				free(new[i]);
+			free(new);
+			return (NULL);
+		}
+		h = h->next;
+		i++;
+	}
+	new[i] = NULL;
+
+	return (new);
 }

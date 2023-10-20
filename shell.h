@@ -33,6 +33,7 @@ int print_list(void);
 int list_len(void);
 int delete_node(list_t **head, char *name);
 char *get_node_var(const char *name);
+char **build_env_array();
 
 /** getters and setters */
 char *get_shell_name(void);

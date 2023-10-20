@@ -28,6 +28,7 @@
 
 int run_command(char *command, char **args)
 {
+	char **env_var = build_env_array();
 	pid_t child_pid;
 	int status;
 
@@ -55,6 +56,6 @@ int run_command(char *command, char **args)
 		if (WIFEXITED(status))
 			set_status(WEXITSTATUS(status));
 	}
-
+	free(env_var);
 	return (get_status());
 }
