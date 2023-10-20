@@ -49,10 +49,11 @@ int _setenv(char *name, char *value)
 	int len = _strlen(name) + _strlen(value);
 	list_t *new;
 
-	temp = malloc(sizeof(char) * (len + 1));
+	temp = malloc(sizeof(char) * (len + 2));
 	if (!temp)
 		return (-1);
 	temp = _strcat(temp, name);
+	temp = _strcat(temp, "=");
 	temp = _strcat(temp, value);
 	temp[len] = '\0';
 	new = get_node(name);
