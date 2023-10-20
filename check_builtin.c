@@ -40,7 +40,7 @@ int check_builtin(char *command)
 			;
 		if (i == 3)
 			_setenv(args[1], args[2]);
-		free_2d_array(cmd_args);
+		free_2d_array(args);
 		return (1);
 	}
 
