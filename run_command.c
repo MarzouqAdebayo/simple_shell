@@ -56,6 +56,6 @@ int run_command(char *command, char **args)
 		if (WIFEXITED(status))
 			set_status(WEXITSTATUS(status));
 	}
-	free(env_vars);
+	free_2d_array(env_vars);
 	return (get_status());
 }
