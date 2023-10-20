@@ -8,9 +8,7 @@
 
 void print_env(void)
 {
-	int i = 0;
-
-	i = print_list();
+	print_list();
 }
 
 /**

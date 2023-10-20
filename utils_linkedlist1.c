@@ -104,8 +104,8 @@ char *get_node_var(const char *name)
 char **build_env_array()
 {
 	list_t *h = *get_head();
-	char **new, *temp;
-	int len = 0, var_len = 0, i = 0, j;
+	char **new;
+	int len = 0, i = 0;
 
 	len = list_len();
 	new = malloc(sizeof(char *) * (len + 1));
@@ -119,7 +119,7 @@ char **build_env_array()
 		if (!new[i])
 		{
 			i--;
-			for (i; i >= 0; i--)
+			for (; i >= 0; i--)
 				free(new[i]);
 			free(new);
 			return (NULL);

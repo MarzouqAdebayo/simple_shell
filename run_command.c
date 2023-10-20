@@ -28,7 +28,7 @@
 
 int run_command(char *command, char **args)
 {
-	char **env_var = build_env_array();
+	char **env_vars = build_env_array();
 	pid_t child_pid;
 	int status;
 
