@@ -16,14 +16,21 @@
 
 char *_getenv(const char *name)
 {
-	char *temp = NULL;
+	char *temp = NULL, *token, *value;
 	list_t *node;
 
 	if (name == NULL)
 		return (NULL);
 	node = get_node(name);
 	if (node)
+	{
 		temp = _strdup(node->var);
+		token = _strtok(temp, ' ');
+		token = _strtok(NULL, ' ');
+		value = _strdup(token);
+		free(temp);
+		return (value);
+	}
 	return (temp);
 }
 
