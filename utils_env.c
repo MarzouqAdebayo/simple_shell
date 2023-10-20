@@ -25,10 +25,11 @@ char *_getenv(const char *name)
 	if (node)
 	{
 		temp = _strdup(node->var);
-		token = _strtok(temp, " ");
-		token = _strtok(NULL, " ");
+		token = _strtok(temp, "=");
+		token = _strtok(NULL, "=");
 		value = _strdup(token);
 		free(temp);
+		_puts(value);
 		return (value);
 	}
 	return (temp);
