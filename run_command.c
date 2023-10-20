@@ -26,9 +26,8 @@
  * execute user-entered commands.
  */
 
-int run_command(char *command, char **args, char **env_vars)
+int run_command(char *command, char **args)
 {
-	char *get_node_var;
 	pid_t child_pid;
 	int status;
 

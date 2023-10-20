@@ -86,13 +86,12 @@ int delete_node(list_t **head, char *name)
 char *get_node_var(char *name)
 {
 	list_t **h = get_head();
-	char *value = NULL;
 
 	while (*h)
 	{
 		if (_strncmp((*h)->var, name, _strlen(name)) == 0)
 			return (_strdup((*h)->var));
-		*h = (*h)->next
+		*h = (*h)->next;
 	}
 	return (NULL);
 }

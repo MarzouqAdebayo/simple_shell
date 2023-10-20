@@ -20,7 +20,7 @@ void initialize_env(void)
  * Return: the head node
 */
 
-list_t *get_head(void)
+list_t **get_head(void)
 {
 	return (&env_node);
 }

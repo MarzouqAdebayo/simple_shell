@@ -25,7 +25,7 @@ typedef struct list_s
 
 /** linked_list utils */
 void initialize_env(void);
-list_t get_head(void);
+list_t **get_head(void);
 void free_list(void);
 list_t *add_node(list_t **head, const char *var);
 list_t *add_node_end(list_t **head, const char *var);
