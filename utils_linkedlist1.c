@@ -86,10 +86,11 @@ int delete_node(list_t **head, char *name)
 list_t *get_node(const char *name)
 {
 	list_t *h = *get_head();
+	int len = _strlen(name);
 
 	while (h)
 	{
-		if (_strncmp(h->var, name, _strlen(name)) == 0)
+		if (_strncmp(h->var, name, len) == 0 && (h->var)[len] == '=')
 			return (h);
 		h = h->next;
 	}
@@ -99,7 +100,7 @@ list_t *get_node(const char *name)
 /**
  * copy_to_2d_array - converts a linked list to array of strings
  * Return: pointer to the array of strings
-*/
+ */
 
 char **build_env_array()
 {
