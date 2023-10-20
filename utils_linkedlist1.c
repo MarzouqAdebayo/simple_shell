@@ -114,7 +114,6 @@ char **build_env_array()
 
 	while (h)
 	{
-		var_len = _strlen(h->var);
 		new[i] = _strdup(h->var);
 		if (!new[i])
 		{
