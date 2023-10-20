@@ -52,10 +52,7 @@ int _setenv(char *name, char *value)
 	temp = malloc(sizeof(char) * (len + 2));
 	if (!temp)
 		return (-1);
-	temp = _strcat(temp, name);
-	temp = _strcat(temp, "=");
-	temp = _strcat(temp, value);
-	temp[len] = '\0';
+	temp = join_env_var(name, "=", value);
 	new = get_node(name);
 	if (new)
 	{

@@ -35,10 +35,12 @@ int check_builtin(char *command)
 	if (_strncmp(cmd, "setenv", 6) == 0)
 	{
 		args = split_str(cmd, ' ');
+		free(cmd);
 		for (i = 0; args[i]; i++)
 			;
 		if (i == 3)
 			_setenv(args[1], args[2]);
+		free_2d_array(cmd_args);
 		return (1);
 	}
 
