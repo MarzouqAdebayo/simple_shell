@@ -29,8 +29,8 @@ list_t get_head(void);
 void free_list(void);
 list_t *add_node(list_t **head, const char *var);
 list_t *add_node_end(list_t **head, const char *var);
-size_t print_list(convoid);
-size_t list_len(void);
+int print_list(convoid);
+int list_len(void);
 int delete_node(list_t **head, char *name);
 char *get_node_var(char *name);
 
@@ -50,7 +50,7 @@ int run_command(char *command, char **args, char **env_vars);
 int check_builtin(char *command);
 
 /** Read util functions */
-ssize_t _getline(char **lineptr, size_t *n, int fd);
+ssize_t _getline(char **lineptr, int *n, int fd);
 
 /** Parse util functions */
 int iswhitespace(char s);
@@ -61,16 +61,16 @@ char **split_str(char *src, const char delimiter);
 void prompt(char *sym);
 
 /** String util functions */
-size_t _strlen(const char *str);
-char *_strncpy(char *dest, const char *src, size_t n);
+int _strlen(const char *str);
+char *_strncpy(char *dest, const char *src, int n);
 char *_strtok(char *str, const char *delim);
 int _atoi(char *s);
-int _strncmp(const char *s1, const char *s2, size_t n);
+int _strncmp(const char *s1, const char *s2, int n);
 char *_strdup(const char *s);
 
 /** Memory util functions */
 void free_2d_array(char **arr);
-void *_realloc(void *ptr, size_t old_size, size_t new_size);
+void *_realloc(void *ptr, int old_size, int new_size);
 
 /** Print util functions */
 int _putchar(char c);

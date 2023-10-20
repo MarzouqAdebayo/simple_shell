@@ -17,7 +17,7 @@
 char *_read_fn(void)
 {
 	char *line = NULL;
-	size_t len = 0;
+	int len = 0;
 	ssize_t bytes_read = 0;
 	int fd = 0;
 

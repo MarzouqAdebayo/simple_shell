@@ -50,9 +50,9 @@ void free_list(void)
  * Return: The number of nodes in the list
  */
 
-size_t print_list(void)
+int print_list(void)
 {
-	size_t size = 0;
+	int size = 0;
 	const list_t *h = env_node;
 
 	while (h)
@@ -73,9 +73,9 @@ size_t print_list(void)
  * Return: returns the length of the linked list
  */
 
-size_t list_len(void)
+int list_len(void)
 {
-	size_t len = 0;
+	int len = 0;
 	list_t *h = env_node;
 
 	while (h)

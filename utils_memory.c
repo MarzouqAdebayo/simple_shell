@@ -46,10 +46,10 @@ void free_2d_array(char **arr)
  * NULL on failure.
  */
 
-void *_realloc(void *ptr, size_t old_size, size_t new_size)
+void *_realloc(void *ptr, int old_size, int new_size)
 {
 	char *new = NULL, *cast_ptr = ptr;
-	size_t i, max = new_size > old_size ? old_size : new_size;
+	int i, max = new_size > old_size ? old_size : new_size;
 
 	if (!ptr && !new_size)
 		return (NULL);

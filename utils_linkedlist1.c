@@ -54,7 +54,7 @@ int delete_node(list_t **head, char *name)
 
 	while (h)
 	{
-		if (_strncmp(h->var, name, strlen(name)) == 0)
+		if (_strncmp(h->var, name, _strlen(name)) == 0)
 		{
 			if (!prev)
 			{
@@ -90,7 +90,7 @@ char *get_node_var(char *name)
 
 	while (*h)
 	{
-		if (_strncmp((*h)->var, name, strlen(name)) == 0)
+		if (_strncmp((*h)->var, name, _strlen(name)) == 0)
 			return (_strdup((*h)->var));
 		*h = (*h)->next
 	}

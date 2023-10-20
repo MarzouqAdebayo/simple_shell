@@ -7,9 +7,9 @@
  * Return: The length of the string.
  */
 
-size_t _strlen(const char *str)
+int _strlen(const char *str)
 {
-	size_t len = 0;
+	int len = 0;
 
 	while (str[len])
 		len++;
@@ -25,9 +25,9 @@ size_t _strlen(const char *str)
  * Return: A pointer to the destination buffer (dest).
  */
 
-char *_strncpy(char *dest, const char *src, size_t n)
+char *_strncpy(char *dest, const char *src, int n)
 {
-	size_t i;
+	int i;
 
 	for (i = 0; i < n && src[i]; i++)
 		dest[i] = src[i];
@@ -138,7 +138,7 @@ int _atoi(char *s)
  * Return: return 0 if same and 1 otherwise
  */
 
-int _strncmp(const char *s1, const char *s2, size_t n)
+int _strncmp(const char *s1, const char *s2, int n)
 {
 	while (n > 0 && *s1 && *s2)
 	{

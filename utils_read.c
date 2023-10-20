@@ -21,11 +21,11 @@ void dummy3(void);
  * read errors, and reaching the end of the file with no data read.
  */
 
-ssize_t _getline(char **lineptr, size_t *n, int fd)
+ssize_t _getline(char **lineptr, int *n, int fd)
 {
 	char c;
 	static char *temp_buffer;
-	size_t index = 0, old_size = *n;
+	int index = 0, old_size = *n;
 	ssize_t _byte;
 
 	if (!lineptr || !n)
