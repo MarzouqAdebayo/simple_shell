@@ -46,7 +46,6 @@ int _setenv(char *name, char *value)
 {
 	list_t **env_head = get_head();
 	char *temp;
-	int len = _strlen(name) + _strlen(value);
 	list_t *new;
 
 	temp = join_env_var(name, "=", value);
